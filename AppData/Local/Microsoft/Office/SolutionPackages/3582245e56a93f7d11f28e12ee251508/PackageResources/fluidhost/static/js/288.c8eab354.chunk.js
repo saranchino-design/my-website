@@ -1,0 +1,2 @@
+(this.webpackJsonpfluidhost=this.webpackJsonpfluidhost||[]).push([[288],{605:function(e){e.exports=JSON.parse('{"ControlClickToFollowLink":"Control+clic per a seguir l\'enlla\xe7","GettingThisReady":"S\'est\xe0 preparant...","Remove":"Suprimeix","Loading":"S\'est\xe0 carregant","NewLiveComponentFileName":"Component din\xe0mic","NewLoopComponentFileName":"Component del Loop","CopyLink":"Copia l\'enlla\xe7"}')}}]);
+//# sourceMappingURL=288.c8eab354.chunk.js.map

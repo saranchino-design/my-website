@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Main</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href="styles.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+	<!-- Body content -->
+    <div id="body">
+		<!-- Top border  -->
+		<div id="top-border">
+		</div>
+		<!-- Main content -->
+		<div id="main-content">
+		    <div id="main-content-row">
+			    <!-- Left column -->
+			    <div id="left-column" style="position: fixed; width: 190px;">
+					<div id="button-new-file" class="button" onclick="console.log('ssevent_onclick_' + id)">
+						<a>
+							<span class="text">Новый документ</span>
+						</a>
+					</div>
+					<div id="button-open-file" class="button" onclick="console.log('ssevent_onclick_' + id)">
+						<a>
+							<span class="text">Открыть</span>
+						</a>
+					</div>
+					<div class="delim"></div>
+			    </div>
+			    <!-- Right column -->
+			    <div id="right-column" style="padding-left: 180px;">
+					<!-- Search form -->
+					<form id="search-form">
+						<div id="search-form-row">
+							<div id="button-view-list" class="item" title="Список" onclick="console.log('ssevent_onclick_' + id)">
+								<a><span></span></a>
+							</div>
+							<div id="button-view-small-icons" class="item" title="Обычные значки" onclick="console.log('ssevent_onclick_' + id)">
+								<a><span></span></a>
+							</div>
+							<div id="button-view-large-icons" class="item selected" title="Крупные значки" onclick="console.log('ssevent_onclick_' + id)">
+								<a><span></span></a>
+							</div>
+							<div id="delim-1" class="item delim"></div>
+							
+							<span id="show-seps" class="item selected" onclick="console.log('ssevent_onclick_' + id)">
+								<span id="show-seps-icon" class="icon"></span>
+								<span class="label"><a href="">Разделители</a></span>
+							</span>
+							<div id="sort" class="item">
+								<div class="label">Сортировать:</div>
+								<div class="input">
+									<select id="sort-options" onchange="console.log('ssevent_onchange_' + value)">
+									  <option id="sort-option-byname-down" value="sort-byname">по имени
+									  <option id="sort-option-byopendatetime-up" value="sort-byopendatetime" selected="">по времени открытия
+									  <option id="sort-option-bysize-down" value="sort-bysize">по размеру
+									</select>
+								</div>
+							</div>
+							<div id="show-period" class="item">
+								<div class="label">Интервал времени:</div>
+								<div class="input">
+									<select id="show-period-options" onchange="console.log('ssevent_onchange_' + value)">
+									  <option id="show-period-option-1day" value="showperiod-1day">1 день
+									  <option id="show-period-option-2days" value="showperiod-2days">2 дня
+									  <option id="show-period-option-week" value="showperiod-week">неделя
+									  <option id="show-period-option-month" value="showperiod-month" selected="">месяц
+									  <option id="show-period-option-halfyear" value="showperiod-halfyear">полгода
+									  <option id="show-period-option-year" value="showperiod-year">год
+									  <option id="show-period-option-all" value="showperiod-all">все
+									</select>
+								</div>
+							</div>
+						</div>
+					</form>
+					<!-- Search result -->
+					<div id="search-result">
+						<div id="list-header" class="data-section-header hidden">
+							<div class="header">
+								<div class="header-row">
+									<div id="list-sort-byname" class="name sort" onclick="console.log('ssevent_onclick_' + id)">
+										<a class="text" href="">Имя</a>
+									</div>
+									<div id="list-sort-byopendatetime" class="time sort" onclick="console.log('ssevent_onclick_' + id)">
+										<a class="text" href="">Время открытия</a>
+									</div>
+									<div id="list-sort-bysize" class="size sort" onclick="console.log('ssevent_onclick_' + id)">
+										<a class="text" href="">Размер</a>
+									</div>
+									<div id="list-sort-bystatus_pin" class="pin_sort sort">
+									</div>
+								</div>
+								<div class="header-row">
+									<div class="grey-line start"><span></span></div>
+									<div class="grey-line"><span></span></div>
+									<div class="grey-line"><span></span></div>
+									<div class="grey-line"><span></span></div>
+								</div>
+							</div>
+						</div>
+						<div class="data-section">
+							<div class="data horizontal">
+								<span class="item large">
+									<span class="wrapper">
+										<span class="previewer">
+											<span class="preview" title="Some description for Draw3.dwg">
+												<a><span class="pin" onclick="console.log('ssevent_onclick_file_pin_2')"></span>
+													<img class="image" src="Draw3.png" onclick="console.log('ssevent_onclick_file_2')" onmouseenter="this.src='Draw3.gif'" onmouseleave="this.src='Draw3.png'">
+												</a>
+											</span>
+										</span>
+										<span class="link" onclick="console.log('ssevent_onclick_file_2')" title="Some description for Draw3.dwg">
+											<a><span>Draw3.dwg</span></a>
+										</span>
+										<span class="date">
+											<span>03.12.2019&nbsp;&nbsp; 10:24</span>
+										</span>
+									</span>
+								</span>
+								<span class="item large">
+									<span class="wrapper">
+										<span class="previewer">
+											<span class="preview" title="Some description for Draw1.dwg">
+												<a><span class="pin" onclick="console.log('ssevent_onclick_file_pin_0')"></span>
+													<img class="image" src="Draw1.png" onclick="console.log('ssevent_onclick_file_0')" onmouseenter="this.src='Draw1.gif'" onmouseleave="this.src='Draw1.png'">
+												</a>
+											</span>
+										</span>
+										<span class="link" onclick="console.log('ssevent_onclick_file_0')" title="Some description for Draw1.dwg">
+											<a><span>Draw1.dwg</span></a>
+										</span>
+										<span class="date">
+											<span>02.12.2019&nbsp;&nbsp; 18:55</span>
+										</span>
+									</span>
+								</span>
+								<span class="item large">
+									<span class="wrapper">
+										<span class="previewer">
+											<span class="preview" title="Some description for Draw2.dwg">
+												<a><span class="pin" onclick="console.log('ssevent_onclick_file_pin_1')"></span>
+													<img class="image" src="Draw2.png" onclick="console.log('ssevent_onclick_file_1')" onmouseenter="this.src='Draw2.gif'" onmouseleave="this.src='Draw2.png'">
+												</a>
+											</span>
+										</span>
+										<span class="link" onclick="console.log('ssevent_onclick_file_1')" title="Some description for Draw2.dwg">
+											<a><span>Draw2.dwg</span></a>
+										</span>
+										<span class="date">
+											<span>01.12.2019&nbsp;&nbsp; 16:24</span>
+										</span>
+									</span>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Bottom border  -->
+		<div id="bottom-border">
+		</div>
+    </div>	
+  </body>
+</html>

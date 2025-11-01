@@ -1,0 +1,2 @@
+(this.webpackJsonpfluidhost=this.webpackJsonpfluidhost||[]).push([[298],{615:function(e){e.exports=JSON.parse('{"ControlClickToFollowLink":"Ktrl + egin klik estekari jarraitzeko","GettingThisReady":"Prestatzen\u2026","Remove":"Kendu","Loading":"Kargatzen","NewLiveComponentFileName":"Zuzeneko osagaia","NewLoopComponentFileName":"Loop osagaia","CopyLink":"Kopiatu esteka"}')}}]);
+//# sourceMappingURL=298.b7109f44.chunk.js.map

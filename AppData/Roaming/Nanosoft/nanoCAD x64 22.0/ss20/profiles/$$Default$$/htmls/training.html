@@ -1,0 +1,1478 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Training</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href="styles.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript">
+	  //Paragraphs
+	  function hideParagraph(elementN, pageM, paragraphP) {
+	    var submenu_id = 'submenu' + elementN + '_' + pageM;
+        if (!document.getElementById(submenu_id))
+			return;			
+		var totalP = document.querySelectorAll('#' + submenu_id + ' .third-level').length;
+		if (paragraphP > totalP + 1)
+			return;
+			
+		var button_id = 'button' + elementN + '_' + pageM + '_' + paragraphP;
+        if (!document.getElementById(button_id))
+			return;				
+		var btn = document.getElementById(button_id); 
+		btn.classList.remove('selected');
+	  }
+	  function hideAllParagraphs(elementN, pageM) {
+	    var submenu_id = 'submenu' + elementN + '_' + pageM;
+        if (!document.getElementById(submenu_id))
+			return;			
+		var totalP = document.querySelectorAll('#' + submenu_id + ' .third-level').length;
+		for(var i = 1; i < totalP+1; i++)
+			hideParagraph(elementN, pageM, i);	  
+	  }
+	  function showParagraph(elementN, pageM, paragraphP, dispatchPage = false) {
+		if (dispatchPage)
+			showPage(elementN, pageM, dispatchPage);
+		
+	    var submenu_id = 'submenu' + elementN + '_' + pageM;
+        if (!document.getElementById(submenu_id))
+			return;			
+		var totalP = document.querySelectorAll('#' + submenu_id + ' .third-level').length;
+		if (paragraphP > totalP + 1)
+			return;
+			
+		hideAllParagraphs(elementN, pageM);
+		
+		var content_selector = '#components-list';
+        var content = document.querySelector(content_selector);
+		var page_selector = '#component' + elementN + ' .page' + pageM + '.paragraph' + paragraphP;
+        var page = document.querySelector(page_selector);
+		if (content && page)			
+		{		
+            var pos = page.offsetTop;	
+			content.scrollTop = pos - 10;
+		}
+
+		var button_id = 'button' + elementN + '_' + pageM + '_' + paragraphP;
+		if (!document.getElementById(button_id))
+			return;				
+		var btn = document.getElementById(button_id); 				
+		btn.className += ' selected';		
+	  }	  
+	  //Page submenu
+	  function hidePageSubmenu(elementN, pageM) {
+		var submenu_id = 'submenu' + elementN + '_' + pageM;
+        if (!document.getElementById(submenu_id))
+			return;						
+		var submenu = document.getElementById(submenu_id);
+		submenu.classList.remove('visible');
+
+		hideAllParagraphs(elementN);
+	  }
+	  function showPageSubmenu(elementN, pageM) {
+		var submenu_id = 'submenu' + elementN + '_' + pageM;
+        if (!document.getElementById(submenu_id))
+			return false;						
+		var submenu = document.getElementById(submenu_id);
+		submenu.className += ' visible';	  
+		
+		showParagraph(elementN, pageM, 1);
+		return true;
+	  }	
+	  //Pages
+	  function hidePage(elementN, pageM) {
+	    var submenu_id = 'submenu' + elementN;
+        if (!document.getElementById(submenu_id))
+			return;		
+		var totalM = document.querySelectorAll('#' + submenu_id + ' .second-level').length;
+		if (pageM > totalM + 1)
+			return;
+			
+		var button_id = 'button' + elementN + '_' + pageM;
+        if (!document.getElementById(button_id))
+			return;				
+		var btn = document.getElementById(button_id); 
+		btn.classList.remove('selected');
+				
+		hidePageSubmenu(elementN, pageM);	  
+	  }
+	  function hideAllPages(elementN) {
+	    var submenu_id = 'submenu' + elementN;
+        if (!document.getElementById(submenu_id))
+			return;			
+		var totalM = document.querySelectorAll('#' + submenu_id + ' .second-level').length;
+		for(var i = 1; i < totalM+1; i++)
+			hidePage(elementN, i);	  
+	  }
+	  function showPage(elementN, pageM, dispatchElement = false) {
+		if (dispatchElement)
+			showElement(elementN);
+		
+	    var submenu_id = 'submenu' + elementN;
+        if (!document.getElementById(submenu_id))
+			return;			
+		var totalM = document.querySelectorAll('#' + submenu_id + ' .second-level').length;
+		if (pageM > totalM + 1)
+			return;
+			
+		hideAllPages(elementN);
+		
+		var content_selector = '#components-list';
+        var content = document.querySelector(content_selector);
+		var page_selector = '#component' + elementN + ' .page' + pageM;
+        var page = document.querySelector(page_selector);
+		if (content && page)
+		{		
+            var pos = page.offsetTop;	
+			content.scrollTop = pos - 10;
+		}
+				
+		if (!showPageSubmenu(elementN, pageM))
+		{
+			var button_id = 'button' + elementN + '_' + pageM;
+			if (!document.getElementById(button_id))
+				return;				
+			var btn = document.getElementById(button_id); 				
+			btn.className += ' selected';		
+		}		
+	  }
+	  //Element submenu
+	  function hideElementSubmenu(elementN) {
+		var submenu_id = 'submenu' + elementN;
+        if (!document.getElementById(submenu_id))
+			return;						
+		var submenu = document.getElementById(submenu_id);
+		submenu.classList.remove('visible');
+
+		hideAllPages(elementN);
+	  }
+	  function showElementSubmenu(elementN) {
+		var submenu_id = 'submenu' + elementN;
+        if (!document.getElementById(submenu_id))
+			return false;						
+		var submenu = document.getElementById(submenu_id);
+		submenu.className += ' visible';	  
+		
+		showPage(elementN, 1);
+		return true;
+	  }
+	  //Elements
+      function hideElement(elementN) {
+	  
+        var totalN = document.querySelectorAll('#components-list .component').length;
+        if (elementN > totalN + 1)
+          return;
+		  
+		var element_id = 'component' + elementN;
+        if (!document.getElementById(element_id))
+			return;				
+        var obj = document.getElementById(element_id); 
+		obj.style.display = "none";
+
+		var button_id = 'button' + elementN;
+        if (!document.getElementById(button_id))
+			return;				
+		var btn = document.getElementById(button_id); 
+		btn.classList.remove('selected');
+				
+		hideElementSubmenu(elementN);
+	  }
+	  function hideAllElements() {
+		var totalN = document.querySelectorAll('#components-list .component').length;
+		for(var i = 1; i < totalN+1; i++)
+			hideElement(i);
+	  }
+	  function showElement(elementN) {
+		var totalN = document.querySelectorAll('#components-list .component').length;
+		if (elementN > totalN + 1)
+			return;
+			
+		hideAllElements();
+		
+		var element_id = 'component' + elementN;
+        if (!document.getElementById(element_id))
+			return;				
+        var obj = document.getElementById(element_id); 
+		obj.style.display = "table";
+
+		if (!showElementSubmenu(elementN))
+		{
+			var button_id = 'button' + elementN;
+			if (!document.getElementById(button_id))
+				return;				
+			var btn = document.getElementById(button_id); 				
+			btn.className += ' selected';
+		}	
+	  }  
+	</script>		
+  </head>
+  <body>
+	<!-- Body content -->
+    <div id="body" style="height: 100%">
+		<!-- Top border  -->
+		<div id="top-border">
+		</div>
+		<!-- Main content -->
+		<div id="main-content">
+			<!-- Right column -->
+			<div id="right-column">
+				<!-- Search result -->
+				<div id="search-result">			
+					<div class="data-section" id="training">
+						<div class="data tree" id="book">
+							<div class="row">
+								<div id="list" class="scroll">
+									<div id="button1" class="item first-level selected">
+									  <a href="javascript:void(0)" onclick="showElement(1)">nanoCAD Plus</a>
+									</div>
+									<div id="button2" class="item first-level">
+									  <a href="javascript:void(0)" onclick="showElement(2)">nanoCAD СПДС</a>
+									</div>
+									<div id="button3" class="item first-level">
+									  <a href="javascript:void(0)" onclick="showElement(3)">nanoCAD Механика</a>
+									</div>
+									<div id="button4" class="item first-level">
+									  <a href="javascript:void(0)" onclick="showElement(4)">nanoCAD 3D-моделирование и зависимости</a>
+									</div>
+									<div id="button5" class="item first-level">
+									  <a href="javascript:void(0)" onclick="showElement(5)">Растровое редактирование</a>
+									</div>
+									<div id="submenu5" class="item submenu">
+										<div id="button5_1" class="item second-level">
+											<a href="javascript:void(0)" onclick="showPage(5, 1)">Обработка растра</a>
+										</div>
+										<div id="submenu5_1" class="item submenu">
+											<div id="button5_1_1" class="item third-level">
+											  <a href="javascript:void(0)" onclick="showParagraph(5, 1, 1)">Вставка растра</a>
+											</div>
+											<div id="button5_1_2" class="item third-level">
+											  <a href="javascript:void(0)" onclick="showParagraph(5, 1, 2)">Коррекция цветного изображения по гистограмме</a>
+											</div>
+											<div id="button5_1_3" class="item third-level">
+											  <a href="javascript:void(0)" onclick="showParagraph(5, 1, 3)">Перевод цветного изображения в монохромное</a>
+											</div>
+											<div id="button5_1_4" class="item third-level">
+											  <a href="javascript:void(0)" onclick="showParagraph(5, 1, 4)">Удаление растрового мусора</a>
+											</div>
+											<div id="button5_1_5" class="item third-level">
+											  <a href="javascript:void(0)" onclick="showParagraph(5, 1, 5)">Устранение искажения изображения</a>
+											</div>
+											<div id="button5_1_6" class="item third-level">
+											  <a href="javascript:void(0)" onclick="showParagraph(5, 1, 6)">Замена растрового штампа чертежа на векторный</a>
+											</div>
+											<div id="button5_1_7" class="item third-level">
+											  <a href="javascript:void(0)" onclick="showParagraph(5, 1, 7)">Внесение изменений в чертеж</a>
+											</div>
+											<div id="button5_1_8" class="item third-level">
+											  <a href="javascript:void(0)" onclick="showParagraph(5, 1, 8)">Растеризация и сохранение документа</a>
+											</div>
+									    </div>	
+										<div id="button5_2" class="item second-level">
+											<a href="javascript:void(0)" onclick="showPage(5, 2)">Перевод растровой графики в векторный формат</a>
+										</div>
+										<div id="submenu5_2" class="item submenu">
+											<div id="button5_2_1" class="item third-level">
+											  <a href="javascript:void(0)" onclick="showParagraph(5, 2, 1)">Настройка параметров конверсии для векторизации</a>
+											</div>
+											<div id="button5_2_2" class="item third-level">
+											  <a href="javascript:void(0)" onclick="showParagraph(5, 2, 2)">Векторизация в режиме трассировки</a>
+											</div>
+											<div id="button5_2_3" class="item third-level">
+											  <a href="javascript:void(0)" onclick="showParagraph(5, 2, 3)">Векторизация в автоматическом режиме</a>
+											</div>
+									    </div>
+										<div id="button5_3" class="item second-level">
+											<!--<a href="javascript:void(0)" onclick="showPage(5, 3)"><i>Файлы и учебные материалы</i></a>-->
+											<span class="folder-icon"></span>&nbsp;&nbsp;<a href="javascript:void(0)" onclick="console.log('ssevent_onclick_testdrive_dir' + '/Raster/')"><i>Файлы тест-драйва</i></a>
+										</div>
+										<div id="button5_4" class="item second-level">
+											<!--<a href="javascript:void(0)" onclick="showPage(5, 3)"><i>Файлы и учебные материалы</i></a>-->
+											<span class="pdf-icon"></span>&nbsp;&nbsp;<a class="anc" href="javascript:void(0)" onclick="console.log('ssevent_onclick_testdrive_pdf' + '/Raster/Тест-драйв nanoCAD Растровое радактирование.pdf')"><i>Открыть тест-драйв в PDF</i></a>
+										</div>										
+									</div>
+								</div>
+								<div id="components-list" class="components data scroll">
+									<span id="component1" class="component folder" style="display: table;">
+										<span class="row">
+										    <span class="description">
+												<span class="brief">
+													<span class="big-header">nanoCAD Plus</span>
+													<span class="text">
+														<p style="text-align: left;">
+															<a class="anc" href="javascript:void(0)" onclick="console.log('ssevent_onclick_testdrive_pdf' + '/nanoCAD Plus/Тест-драйв nanoCAD Plus.pdf')">
+																<span class="link">
+																	<img align="middle" src="./training_images/image006.png" alt="Тест-драйв">
+																	<span class="title">Тест-драйв</span>
+																</span>
+															</a>
+															<a class="anc" href="javascript:void(0)" onclick="console.log('ssevent_onclick_testdrive_dir' + '/nanoCAD Plus/')">
+																<span class="link">
+																	<img align="middle" src="./training_images/image007.png" alt="Файлы тест-драйва">
+																	<span class="title">Файлы тест-драйва</span>
+																</span>
+															</a>
+															<br>
+															<a class="anc" href="https://www.nanocad.ru/learning/nanocad-plus/">
+																<span class="link">
+																	<img align="middle" src="./training_images/image008.png" alt="Видео-уроки">
+																	<span class="title">Видео-уроки</span>
+																</span>
+															</a>
+														</p>
+													</span>
+												</span>
+											</span>
+										</span>
+									</span>
+									<span id="component2" class="component folder" style="display: none;">
+										<span class="row">
+										    <span class="description">
+												<span class="brief">
+													<span class="big-header">nanoCAD СПДС</span>
+													<span class="text">
+														<p style="text-align: left;">
+															<a class="anc" href="javascript:void(0)" onclick="console.log('ssevent_onclick_testdrive_pdf' + '/nanoCAD СПДС/Тест-драйв nanoCAD СПДС.pdf')">
+																<span class="link">
+																	<img align="middle" src="./training_images/image006.png" alt="Тест-драйв">
+																	<span class="title">Тест-драйв</span>
+																</span>
+															</a>
+															<a class="anc" href="javascript:void(0)" onclick="console.log('ssevent_onclick_testdrive_dir' + '/nanoCAD СПДС/')">
+																<span class="link">
+																	<img align="middle" src="./training_images/image007.png" alt="Файлы тест-драйва">
+																	<span class="title">Файлы тест-драйва</span>
+																</span>
+															</a>
+															<br>
+															<a class="anc" href="https://www.nanocad.ru/learning/nanocadspds/">
+																<span class="link">
+																	<img align="middle" src="./training_images/image008.png" alt="Видео-уроки">
+																	<span class="title">Видео-уроки</span>
+																</span>
+															</a>
+														</p>
+													</span>
+
+												</span>
+											</span>
+										</span>
+									</span>
+									<span id="component3" class="component folder" style="display: none;">
+										<span class="row">
+										    <span class="description">
+												<span class="brief">
+													<span class="big-header">nanoCAD Механика</span>
+													<span class="text">
+														<p style="text-align: left;">
+															<a class="anc" href="javascript:void(0)" onclick="console.log('ssevent_onclick_testdrive_pdf' + '/nanoCAD Механика/Тест-драйв nanoCAD Механика.pdf')">
+																<span class="link">
+																	<img align="middle" src="./training_images/image006.png" alt="Тест-драйв">
+																	<span class="title">Тест-драйв</span>
+																</span>
+															</a>
+															<a class="anc" href="javascript:void(0)" onclick="console.log('ssevent_onclick_testdrive_dir' + '/nanoCAD Механика/')">
+																<span class="link">
+																	<img align="middle" src="./training_images/image007.png" alt="Файлы тест-драйва">
+																	<span class="title">Файлы тест-драйва</span>
+																</span>
+															</a>
+															<br>
+															<a class="anc" href="https://www.nanocad.ru/learning/nanocadmech/">
+																<span class="link">
+																	<img align="middle" src="./training_images/image008.png" alt="Видео-уроки">
+																	<span class="title">Видео-уроки</span>
+																</span>
+															</a>
+														</p>
+													</span>
+												</span>
+											</span>
+										</span>
+									</span>
+									<span id="component4" class="component folder" style="display: none;">
+										<span class="row">
+										    <span class="description">
+												<span class="brief">
+													<span class="big-header">nanoCAD 3D-моделирование и зависимости</span>
+													<span class="text">
+														<p style="text-align: left;">
+															<a class="anc" href="javascript:void(0)" onclick="console.log('ssevent_onclick_testdrive_pdf' + '/Модуль 3D/Тест-драйв Модуль 3D.pdf')">
+																<span class="link">
+																	<img align="middle" src="./training_images/image006.png" alt="Тест-драйв">
+																	<span class="title">Тест-драйв</span>
+																</span>
+															</a>
+															<a class="anc" href="javascript:void(0)" onclick="console.log('ssevent_onclick_testdrive_dir' + '/Модуль 3D/')">
+																<span class="link">
+																	<img align="middle" src="./training_images/image007.png" alt="Файлы тест-драйва">
+																	<span class="title">Файлы тест-драйва</span>
+																</span>
+															</a>
+															<br>
+															<a class="anc" href="https://www.nanocad.ru/learning/modul-3D/">
+																<span class="link">
+																	<img align="middle" src="./training_images/image008.png" alt="Видео-уроки">
+																	<span class="title">Видео-уроки</span>
+																</span>
+															</a>
+														</p>
+													</span>
+												</span>
+											</span>
+										</span>
+									</span>
+									<span id="component5" class="component" style="display: none;">
+										<span class="row">
+										    <span class="description">
+												<span class="brief">
+													<span class="big-header page1 paragraph1 nomargin-header">Обработка растра</span>
+													<span class="medium-header">Вставка растра</span>
+													<span class="text">
+														<ol>
+															<li>Создайте новый документ.</li></br>
+															<li>Вставьте растровое изображение командой <span class="text-mark-1">Вставка растра</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon1.png">&nbsp;одним из способов:
+																<ul type="disc"></br>
+																	<li>
+																		ЛЕНТА: <span class="text-mark-1">Растр </span>&gt; <span class="text-mark-1">Файл</span> &gt; <span class="text-mark-1">Вставка растра</span> 
+																	</li></br>
+																	<li>
+																		Функц. панель ИНСТРУМЕНТЫ: <span class="text-mark-1">Растровый учебник</span> &gt; <span class="text-mark-1">Файл</span> &gt; <span class="text-mark-1">Вставка растра</span>  
+																	</li></br>
+																	Вызов функциональной панели <b>Инструменты</b>:</br>
+																	</br>ЛЕНТА: <span class="text-mark-1">Настройки</span> &gt; <span class="text-mark-1">Функциональные панели</span> &gt; <span class="text-mark-1">Инструменты</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon2.png">&nbsp; 
+																</ul></br>
+																Откроется диалог <b>Вставка изображения:</b>
+															</li>
+														</ol>
+													</span>
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" src="./training_images/image009.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<ol start="3">
+															<li>В диалоге нажмите кнопку <span class="text-mark-1">Обзор</span> и найдите файл <b>Втулка.tif</b> (C:\Users\пользователь\AppData\Roaming\Nanosoft\nanoCAD Plus 20.1\TestDrive\Raster).</li> </br>
+														    <li>
+																Включите <span class="text-mark-1">Указать на экране точку вставки</span> и нажмите <span class="text-mark-1">ОК</span>. В модельном 
+																пространстве появится рамка (граница) растра. Левой кнопкой мыши (ЛКМ) кликните в любом месте пространства. </br>
+															</li>
+														</ol>
+													</span>
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" src="./training_images/image010.png" alt="пример">
+														</p>
+													</span>
+													<span class="medium-header page1 paragraph2">Коррекция цветного изображения по гистограмме</span>
+													<span class="text">
+														<ol>
+															<li>Вызовите команду <span class="text-mark-1">Уровни по шаблону</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon3.png">&nbsp;одним из способов:
+																<ul type="disc"></br>
+																	<li>
+																		ЛЕНТА: <span class="text-mark-1">Растр</span> &gt; <span class="text-mark-1">Обработка</span> &gt; <span class="text-mark-1">Уровни по шаблону</span>    
+																	</li></br>
+																	<li>
+																		Функц. панель ИНСТРУМЕНТЫ: <span class="text-mark-1">Растровый учебник </span> &gt; <span class="text-mark-1">Обработка </span> &gt; <span class="text-mark-1">Уровни по шаблону</span> </br>   
+																	</li></br>
+																</ul>
+															</li>
+															<li>
+																Задайте пороговое значение для темных тонов: используя темную пипетку (взять пробу для низшей отметки), укажите на экране цвет,
+																который должен стать черным (выберите один из светлых пикселей на черной части изображения). 
+															</li></br>
+															<li>
+																Затем задайте пороговое значение для светлых тонов: используя светлую пипетку (взять пробу для высшей отметки),
+																укажите на экране цвет, который хотите преобразовать в белый (выберите один из темных пикселей на фоне). 
+															</li>
+														</ol>
+													</span>
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" src="./training_images/image011.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<ol start="4">
+															<li>Нажмите кнопку <span class="text-mark-1">Применить.</span></li> 											
+														</ol>
+													</span>
+													<span class="text" style="padding-left: 11px;">
+														Все пиксели, имевшие значение яркости ниже порога темного, получат нулевое значение яркости, а пиксели со значениями яркости выше
+														самого яркого – максимальное значение яркости. </br>
+													</span>
+													<span class="medium-header page1 paragraph3">Перевод цветного изображения в монохромное</span>
+													<span class="text">
+														<ol>
+															<li>Вызовите команду <span class="text-mark-1">Бинаризация</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon4.png">&nbsp;одним из способов: 
+																<ul type="disc"></br>
+																	<li>
+																		ЛЕНТА: <span class="text-mark-1"> Растр </span> &gt; <span class="text-mark-1">Обработка </span> &gt; <span class="text-mark-1">Бинаризация</span>    
+																	</li></br>
+																	<li>
+																		Функц. панель ИНСТРУМЕНТЫ: <span class="text-mark-1">Растровый учебник </span> &gt; <span class="text-mark-1">Обработка </span> &gt; <span class="text-mark-1">Бинаризация    
+																	</li></br>
+																</ul>
+															</li>
+															<li>
+																В диалоговом окне <b>Бинаризовать</b> выберите вкладку <b>Порог:</b> 
+															</li>
+															<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" width="450" height="230" src="./training_images/image012.png" alt="пример">
+														</p>
+														</span>
+															<li>
+																Кликните по нужной части загруженного растра. Появится красная рамка с границами окна просмотра.
+															</li>
+														</ol>
+													</span>
+													<span class="text">
+														<ol start="4">
+															<li>В списке <span class="text-mark-1">По</span> выберите метод <span class="text-mark-1"> Серый.</span></li></br>
+															<li>В списке <span class="text-mark-1">Канал</span> тоже выберите <span class="text-mark-1"> Серый.</span></li></br>
+															<li>Подберите пороговые значения для параметра <span class="text-mark-1">G.</span></li></br>
+															<li>Нажмите на кнопку <span class="text-mark-1"> Применить.</span></li></br>
+															Поверх исходного цветного растра появится новый монохромный растр.</br>
+															</br><li>Чтобы удалить исходный растр, кликните на границе растра. 
+														</ol>
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" width="450" height="467"  src="./training_images/image013.png" alt="пример">
+														</p>
+													</span>															
+													<ol start="9">
+														<li>В появившемся диалоговом окне выберите исходный растр и нажмите кнопку <span class="text-mark-1"> Delete</span> на клавиатуре.</li>
+													</ol>
+													</span>
+													<span class="medium-header page1 paragraph4">Удаление растрового мусора</span>
+													<span class="text">
+														<ol>
+															<li>Вызовите команду <span class="text-mark-1">Удаление мусора </span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon5.png">&nbsp;одним из способов:
+																<ul type="disc"></br>
+																	<li>
+																		ЛЕНТА: <span class="text-mark-1">Растр</span> &gt; <span class="text-mark-1">Обработка</span> &gt; <span class="text-mark-1">Удаление мусора</span>    
+																	</li></br>
+																	<li>
+																		Функц. панель ИНСТРУМЕНТЫ: <span class="text-mark-1">Растровый учебник </span> &gt; <span class="text-mark-1">Обработка </span> &gt; <span class="text-mark-1">Удаление мусора</span> </br>   
+																	</li></br>
+																</ul>
+																Появится диалоговое окно <b>Удаление мусора.</b>
+															</li></br>
+															<li>
+																В диалоге задайте размер мусора при помощи кнопки <span class="text-mark-1">Измерить максимальный размер:</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon7.png">&nbsp; 
+															</li></br>
+															<li>
+																На чертеже найдите и кликните на среднем по размерам объекте, который считается растровым мусором. В диалоге появятся размеры выбранного мусора в мм и в точках.
+															</li>
+														</ol>
+													</span>
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle"  width="450" height="229" src="./training_images/image014.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<ol start="4">
+															<li>
+																Нажмите кнопку <span class="text-mark-1">Применить.</span></br>
+															</li>
+														</ol>
+													</span>
+													<span class="text" style="padding-left: 15px;">
+														Растровый мусор также можно удалить автоматически, если установить флажок <span class="text-mark-1">Вычислить
+														автоматически</span>, чтобы фильтр сам оценил размеры растрового мусора перед выполнением
+														фильтрации. Каждое нажатие на кнопку <span class="text-mark-1">Применить</span> будет удалять мусор: сначала самый мелкий,
+														потом все крупнее и крупнее.
+													</span>
+													<span class="text">
+														<ol start="5">
+															<li>
+																Оставшийся крупный мусор удалите с помощью <b>инструментов выбора:</b>
+															</li>
+														</ol>
+													</span>
+													<span class="text" style="padding-left: 11px;">
+														5.1. Включите <span class="text-mark-1">формирование набора выбора</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon8.png">&nbsp;одним из способов:
+														<ul type="disc">
+															<li>
+															ЛЕНТА: <span class="text-mark-1">Растр</span> &gt; <span class="text-mark-1">Растровый выбор</span> &gt; <span class="text-mark-1">Добавление в выбор</span>   
+															</li></br>
+															<li>
+															Функц. панель ИНСТРУМЕНТЫ: <span class="text-mark-1">Растровый учебник</span> &gt; <span class="text-mark-1">Растровый выбор</span> &gt; <span class="text-mark-1">Добавление в выбор</span>   
+															</li>
+														</ul>
+													</span>
+													<span class="text" style="padding-left: 11px;">
+														5.2. Запустите команду <span class="text-mark-1">Внутри прямоугольника (заливка)</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon9.png">&nbsp;одним из способов:
+														<ul type="disc">
+															<li>
+																ЛЕНТА: <span class="text-mark-1">Растр</span> &gt; <span class="text-mark-1">Растровый выбор</span> &gt; <span class="text-mark-1">Внутри прямоугольника (заливка)</span>   
+															</li></br>
+															<li>
+																Функц. панель ИНСТРУМЕНТЫ: <span class="text-mark-1">Растровый учебник</span> &gt; <span class="text-mark-1">Растровый выбор</span> &gt; <span class="text-mark-1"> Внутри прямоугольника (заливка)</span>   
+															</li>
+														</ul>
+													</span>
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle"  width="450" height="397" src="./training_images/image015.png" alt="пример">
+														</p>
+													</span>	
+													<span class="text" style="padding-left: 11px;">
+														5.3. Прямоугольной рамкой выберите мусор. 
+													</span>
+													<span class="text" style="padding-left: 11px;">
+														5.4. Для завершения выбора нажмите на кнопку <span class="text-mark-1">Enter.</span> 
+													</span>
+													<span class="text" style="padding-left: 11px;">
+														5.5. Чтобы удалить выбранный мусор, нажмите на кнопку <span class="text-mark-1">Delete.</span>
+													</span>
+													<span class="medium-header page1 paragraph5">Устранение искажения изображения </span>
+													<span class="text">
+														<ol>
+															<li>Со всех сторон добавьте к изображению пустые поля. Для этого запустите команду <span class="text-mark-1">Изменение размера</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon10.png">&nbsp;одним из способов:
+																<ul type="disc"></br>
+																	<li>
+																		ЛЕНТА: <span class="text-mark-1">Растр</span> &gt; <span class="text-mark-1">Изменение</span> &gt; <span class="text-mark-1">Изменение размера</span>   
+																	</li></br>
+																	<li>
+																		Функц. панель ИНСТРУМЕНТЫ: <span class="text-mark-1">Растровый учебник</span> &gt; <span class="text-mark-1">Изменение</span> &gt; <span class="text-mark-1">Изменение размера</span>   
+																	</li></br>
+																</ul>
+																В поле <<span class="text-mark-1">Выравнивание/Изменение полей</span> с четырех сторон добавьте пустые поля размером 5 мм.
+															</li>
+														</ol>
+													</span>
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" width="450" height="213" src="./training_images/image016.png" alt="пример">
+														</p>
+													</span>	
+													<span class="text">
+														<ol start="2">
+															<li>
+																Нажмите кнопку  <span class="text-mark-1">ОК.</span>
+															</li></br>
+															<li>
+																Так как у чертежа частично потеряна внешняя рамка штампа, проведите коррекцию чертежа по 4-м точкам с использованием внутренней
+																рамки чертежа. Для этого нужно настроить ее размеры:
+															</li>
+															</ol>
+													<span class="text" style="padding-left: 11px;">
+														3.1. Откройте диалоговое окно <b>Настройки:</b> &nbsp;<img align="middle" width="26" height="26" src="./training_images/icon11.png">&nbsp;
+													</span>
+													<ol>
+														<ul type="disc">
+															<li>
+																ЛЕНТА:<span class="text-mark-1"> Настройки</span> &gt; <span class="text-mark-1">Адаптация</span> &gt; <span class="text-mark-1">Настройки программы</span>
+															</li>
+														<ul>
+													</ol>
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle"  width="450" height="387" src="./training_images/image017.png" alt="пример">
+														</p>
+													</span>
+													<span class="text" style="padding-left: 11px;">
+														3.2. В диалоговом окне раскройте раздел <b>Форматы бумаги</b>.
+													</span>	
+													<span class="text" style="padding-left: 11px;">
+														3.3. Выберите формат <span class="text-mark-1">ISO A4 (210.00 x 297.00 мм)</span> и нажмите кнопку <span class="text-mark-1">Изменить.</span>
+													</span>
+													<span class="text" style="padding-left: 11px;">
+														Откроется диалоговое окно <b>Изменение формата бумаги:</b>
+													</span>
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" src="./training_images/image018.png" alt="пример">
+														</p>
+													</span>
+													<span class="text" style="padding-left: 11px;">
+														3.4. В диалоговом окне включите галочку <span class="text-mark-1">Внутренняя рамка</span> и задайте размеры рамки штампа формата <b>А4</b>
+															(книжная ориентация – 185.00 х 287.00 мм).
+													</span>
+													<span class="text" style="padding-left: 11px;">
+														3.5. Нажмите кнопку <span class="text-mark-1">ОК.</span>
+													</span>
+													<span class="text" style="padding-left: 11px;">
+														3.6. Нажмите кнопку <span class="text-mark-1">ОК</span> в окне <b>Настройки</b>.
+													</span>
+													<ol start="4">
+														<li>Запустите команду <span class="text-mark-1">Корректировка по 4-м точкам</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon12.png">&nbsp;одним из способов:
+															<ul type="disc"></br>
+																<li>
+																	ЛЕНТА:<span class="text-mark-1"> Растр</span> &gt; <span class="text-mark-1">Изменение</span> &gt; <span class="text-mark-1">Корректировка по 4-м точкам</span>   
+																</li></br>
+																<li>
+																	Функц. панель ИНСТРУМЕНТЫ: <span class="text-mark-1">Растровый учебник</span> &gt; <span class="text-mark-1">Изменение</span> &gt; <span class="text-mark-1">Корректировка по 4-м точкам</span>   
+																</li>
+															</ul>
+														</li>
+													</ol>
+													<span class="text" style="padding-left: 11px;">
+														Откроется диалоговое окно <b>Коррекция по 4 точкам</b>: 
+													</span>
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" src="./training_images/image019.png" alt="пример">
+														</p>
+													</span>
+													<ol start="5">
+														<li>
+															В диалоговом окне в поле <b>Размер рамки</b> выберите формат <span class="text-mark-1">ISO A4</span>, включите <span class="text-mark-1">Использовать внутреннюю рамку</span> и задайте <span class="text-mark-1">книжную ориентацию.</span>
+														</li></br>
+														<li>
+															Нажмите кнопку <span class="text-mark-1">Измерить рамку</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon13.png">&nbsp;и последовательно укажите на изображении четыре угла внутренней рамки.													
+														</li>
+													</ol>
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" src="./training_images/image020.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<ol start="7">
+															<li>													
+																Нажмите кнопку <span class="text-mark-1">ОК.</span>
+															</li>
+														</ol>
+													</span>													
+													<span class="medium-header page1 paragraph6">Замена растрового штампа чертежа на векторный</span>
+													<span class="text" style="padding-left: 0px;">
+														Используйте готовую векторную рамку формата <b>А4.</b>
+													</span>
+													<ol>
+														<li>
+															Откройте функциональную панель <b>Инструменты</b>:&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon14.png">&nbsp;
+															<ul type="disc"></br>
+																<li>
+																	ЛЕНТА:<span class="text-mark-1"> Настройки</span> &gt; <span class="text-mark-1">Функциональные панели</span> &gt; <span class="text-mark-1">Инструменты</span>   
+																</li>
+															</ul>
+														</li>
+													</ol>
+													</span>													
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" src="./training_images/image021.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<ol start="2">
+															<li>													
+																В открывшемся окне раскройте <span class="text-mark-1"> Каталог блоков</span> &gt; <span class="text-mark-1"> Форматы</span> &gt; <span class="text-mark-1"> Форматы ЕСКД</span> и выберите <span class="text-mark-1">Формат ЕСКД А4</span> 
+															</li></br>
+															<li>
+																Перетащите его мышью на пустое место модельного пространства:													
+															</li>
+														</ol>
+													</span>													
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" width="450" height="320" src="./training_images/image022.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<ol start="4">
+															<li>														
+																Закройте диалоговое окно <b>Инструменты</b>.
+															</li></br>
+															<li>Выберите векторную рамку. </br>
+																<span class="text" style="padding-left: 0px;">
+																	Запустите команду <span class="text-mark-1">Перемещение</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon15.png">&nbsp;одним из способов:
+																</span>
+																<ul type="disc">
+																	<li>
+																		ЛЕНТА:<span class="text-mark-1"> Главная</span> &gt; <span class="text-mark-1"> Редактирование</span> &gt; <span class="text-mark-1"> Перемещение</span>   
+																	</li></br>
+																	<li>
+																		Функц. панель ИНСТРУМЕНТЫ: <span class="text-mark-1">Мои инструменты</span> &gt; <span class="text-mark-1"> Редактирование</span> &gt; <span class="text-mark-1"> Перемещение</span>   
+																	</li></br>
+																</ul>
+															</li>
+															<li>
+																Наложите векторную рамку на растровую. В качестве базовой точки выберите левый нижний угол внутренней рамки чертежа.
+															</li>
+														</ol>
+													</span>	
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" valign="top" width="216" height="161" src="./training_images/image023.png" alt="пример">
+															&nbsp;&nbsp;&nbsp;&nbsp;
+															<img align="middle" width="216" height="295" src="./training_images/image024.png" alt="пример">
+														</p>
+													</span>	
+													<span class="text">
+														<ol start="7">
+															<li>
+																Нажмите <span class="text-mark-1"> Esc</span> для снятия выделения.
+															</li></br>
+															<li>
+																Удалите растровые рамку и штамп чертежа:
+															</li>
+														</ol>
+														<span class="text" style="padding-left: 11px;">
+															8.1. Выберите все растровое изображение командой <span class="text-mark-1">Выбрать всё</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon16.png">&nbsp;одним из способов:
+														</span>
+														<ul type="disc">
+															<li>	
+																ЛЕНТА:<span class="text-mark-1"> Растр</span> &gt; <span class="text-mark-1"> Растровый выбор</span> &gt; <span class="text-mark-1"> Выбрать все</span>   
+															</li></br>
+															<li>
+																Функц. панель ИНСТРУМЕНТЫ: <span class="text-mark-1"> Растр</span> &gt; <span class="text-mark-1"> Растровый выбор</span> &gt; <span class="text-mark-1"> Выбрать все</span>   
+															</li>
+														</ul>
+														<span class="text" style="padding-left: 11px;">
+															8.2. Из выбора исключите растровую графику, которую нужно оставить. Для этого включите режим <b>Исключить</b>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon17.png">&nbsp;одним из способов:
+														</span>
+															<ul type="disc">
+																<li>
+																	ЛЕНТА:<span class="text-mark-1"> Растр</span> &gt; <span class="text-mark-1"> Растровый выбор</span> &gt; <span class="text-mark-1"> Исключение из выбора</span>   
+																</li></br>
+																<li>
+																	Функц. панель ИНСТРУМЕНТЫ: <span class="text-mark-1"> Растр</span> &gt; <span class="text-mark-1"> Растровый выбор</span> &gt; <span class="text-mark-1"> Исключение из выбора</span>   
+																</li>
+															</ul>	
+														<span class="text" style="padding-left: 11px;">
+															8.3. C помощью дополнительных методов выберите вид, обозначение, название, массу и материал детали:
+														</span>
+															<ul type="disc">
+																<li>
+																	ЛЕНТА:<span class="text-mark-1"> Растр</span> &gt; <span class="text-mark-1"> Растровый выбор</span> &gt; <span class="text-mark-1"> Внутри прямоугольника (заливка)</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon18.png">&nbsp;
+																</li></br>
+																<li>
+																	Функц. панель ИНСТРУМЕНТЫ: <span class="text-mark-1"> Растр</span> &gt; <span class="text-mark-1"> Растровый выбор</span> &gt; <span class="text-mark-1"> Внутри прямоугольника (заливка)</span>   
+																</li>
+															</ul>
+													</span>	
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" src="./training_images/image025.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<ol start="9">
+															<li>														
+																Для удаления выбранной информации нажмите на кнопку <span class="text-mark-1">Delete.</span>
+															</li>
+														</ol>
+													</span>	
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" src="./training_images/image026.png" alt="пример">
+														</p>
+													</span>
+													<span class="medium-header page1 paragraph7">Внесение изменений в чертеж</span>
+													<span class="text">
+														<ol>
+															<li>Отредактируйте номер чертежа и название изделия.</br>
+																<span class="text" style="padding-left: 0px;">
+																	Запустите команду <span class="text-mark-1">Редактировать текст</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon19.png">&nbsp;одним из способов:
+																</span>
+																<ul type="disc">
+																	<li>
+																		ЛЕНТА:<span class="text-mark-1"> Растр</span> &gt; <span class="text-mark-1"> Растеризация</span> &gt; <span class="text-mark-1"> Редактирование растрового текста</span>   
+																	</li></br>
+																	<li>
+																		Функц. панель ИНСТРУМЕНТЫ: <span class="text-mark-1"> Растровый учебник</span> &gt; <span class="text-mark-1"> Растеризация</span> &gt; <span class="text-mark-1"> Редактирование растрового текста</span>   
+																	</li></br>
+																</ul>
+																<span class="text" style="padding-left: 0px;">	
+																	Обведите прямоугольной рамкой текст, который нужно изменить, начиная с горизонтальной базовой линии:
+																</span>
+															</li>														
+														</ol>
+													</span>														
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" width="450" height="240" src="./training_images/image027.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<ol start="2">
+															<li>
+																Введите новый текст и нажмите на <span class="text-mark-1"> Enter.</span> Поверх исходного растрового текста появится новый векторный текст:
+															</li>													
+														</ol>
+													</span>	
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" width="450" height="146" src="./training_images/image028.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<ol start="3">
+															<li>													
+																Выберите <span class="text-mark-1">Нет</span> для растеризации текста.
+															</li></br>													
+															<li>													
+																Выберите полученный векторный текст и в окне <b>Свойства</b> задайте нужные параметры: например, <b>стиль - Standard, Высота – 7, Угол наклона - 15.</b>
+															</li>													
+														</ol>
+													</span>	
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" src="./training_images/image029.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<ol start="5">
+															<li>													
+																Нажмите на кнопку <span class="text-mark-1">Esc</span> для выхода из режима редактирования текста.
+															</li></br>													
+															<li>													
+																Аналогично отредактируйте текст в полях <b>Название, Материал, Масса и Номер чертежа</b> в верхнем левом углу штампа.</br>
+																Чтобы повернуть текст на 180 градусов, поставьте в свойствах <b>угол поворота – 180.</b>
+															</li>													
+														</ol>
+													</span>	
+													<span class="medium-header page1 paragraph8">Растеризация и сохранение документа</span>
+													<span class="text">
+														<ol>
+															<li>
+																Выберите все векторные данные: 
+															</li>													
+														</ol>
+													</span>	
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" src="./training_images/image030.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<ol start="2">
+															<li>Отредактируйте номер чертежа и название изделия.</br>
+																<span class="text" style="padding-left: 0px;">
+																	Запустите команду <span class="text-mark-1">Растеризация с удалением выбора</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon20.png">&nbsp;одним из способов:
+																</span>
+																<ul type="disc">
+																	<li>
+																		ЛЕНТА:<span class="text-mark-1"> Растр</span> &gt; <span class="text-mark-1"> Растеризация</span> &gt; <span class="text-mark-1"> Растеризация с удалением выбора</span>   
+																	</li></br>
+																	<li>
+																		Функц. панель ИНСТРУМЕНТЫ: <span class="text-mark-1"> Растровый учебник</span> &gt; <span class="text-mark-1"> Растеризация</span> &gt; <span class="text-mark-1"> Растеризация с удалением выбора</span>   
+																	</li>
+																</ul>
+															</li>														
+														</ol>
+													</span>	
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" src="./training_images/image031.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<ol start="3">
+															<li>Обрежьте пустые поля автоматически.</br>
+																<span class="text" style="padding-left: 0px;">
+																	Запустите команду <span class="text-mark-1">Обрезка растра автоматически</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon21.png">&nbsp;одним из способов:
+																</span>
+																<ul type="disc">
+																	<li>
+																		ЛЕНТА:<span class="text-mark-1"> Растр</span> &gt; <span class="text-mark-1"> Изменение</span> &gt; <span class="text-mark-1"> Обрезка растра автоматически</span>   
+																	</li></br>
+																	<li>
+																		Функц. панель ИНСТРУМЕНТЫ: <span class="text-mark-1"> Растровый учебник</span> &gt; <span class="text-mark-1"> Изменение</span> &gt; <span class="text-mark-1"> Обрезка растра автоматически</span>   
+																	</li></br>
+																</ul>
+															</li>														
+															<li>Для сохранения полученного результата откройте диалоговое окно <b>Внешние ссылки:</b>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon22.png">&nbsp;
+															<span class="text"></br> 
+																ЛЕНТА:<span class="text-mark-1"> Вставка</span> &gt; <span class="text-mark-1"> Ссылка</span> &gt; <span class="text-mark-1"> Диспетчер ссылок</span>   
+															</span>
+															<span class="text">
+																Выделите ссылку на <b>Втулку0</b>, имеющую статус <b>Загружено</b>.
+															</span>
+															<span class="text">
+																Нажмите кнопку <span class="text-mark-1">Сохранить: <img align="middle" width="26" height="26" src="./training_images/icon37.png"</span>
+															</span>
+														</ol>
+													</span>	
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" width="450" height="302" src="./training_images/image032.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<ol start="5">
+															<li>
+																В открывшемся окне задайте имя файла, тип файла (TIFF) и нажмите кнопку <span class="text-mark-1">Настойка</span>.
+															</li>
+															<li>
+																На вкладке <b>Монохромный</b> настройте <b>параметры сохранения формата TIFF:</b>
+															</li>
+														</ol>
+													</span>	
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" src="./training_images/image033.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<ol start="7">
+															<li>
+																Нажмите кнопку <span class="text-mark-1">ОК.</span>
+															</li>
+															<li>
+																Нажмите кнопку <span class="text-mark-1">Сохранить.</span>
+															</li>
+															<li>
+																Закройте окно <b>Внешние ссылки</b>.
+															</li>
+														</ol>
+													</span>	
+													<span class="big-header page2 paragraph1">Перевод растровой графики в векторный формат</span>
+													<span class="medium-header">Настройка параметров конверсии для векторизации</span>
+													<span class="text">
+														<ol>
+															<li>
+																Откройте файл <b>NC_Mech.dwg</b>.
+															</li>
+														</ol>
+													</span>	
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" width="450" height="395" src="./training_images/image034.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<ol start="2">
+															<li>
+																<span class="text" style="padding-left: 0px;">
+																	Запустите команду <span class="text-mark-1">Параметры</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon23.png">&nbsp;одним из способов:
+																</span>
+																<ul type="disc">
+																	<li>
+																		ЛЕНТА:<span class="text-mark-1"> Растр</span> &gt; <span class="text-mark-1">Преобразование</span> &gt; <span class="text-mark-1">Параметры преобразования</span>   
+																	</li></br>
+																	<li>
+																		Функц. панель ИНСТРУМЕНТЫ: <span class="text-mark-1"> Растровый учебник</span> &gt; <span class="text-mark-1">Преобразование</span> &gt; <span class="text-mark-1">Параметры преобразования</span>   
+																	</li></br>
+																</ul>															
+															</li>
+															<li>
+																На вкладке <b>Распознавание</b> отметьте <span class="text-mark-1">Линии</span> (типы линий и стрелки), <span class="text-mark-1">Дуги и Окружности</span> (типы линий и стрелки), <span class="text-mark-1">Текстовая область (OCR)</span>, <span class="text-mark-1">Штриховки</span> (±45°).
+															</li>
+														</ol>
+													</span>	
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" src="./training_images/image035.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<ol start="4">
+															<li>
+																На вкладке <b>Параметры</b> задайте <b>максимальную толщину</b>, <b>максимальный разрыв</b>, <b>высоту текста</b>, <b>размер стрелки</b>, установите <b>точность</b> и настройте <b>ортогонализацию</b>.
+															</li>
+														</ol>
+													</span>	
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" src="./training_images/image036.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<ol start="5">
+															<li>
+																Для задания максимальной толщины нажмите кнопку <span class="text-mark-1">Измерить значение</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon24.png">&nbsp; напротив поля <span class="text-mark-1">Максимальная толщина</span> и пересеките наиболее широкую линию чертежа. Полученное значение имеет смысл немного увеличить.
+															</li>
+														</ol>
+													</span>	
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" width="450" height="376" src="./training_images/image037.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														В данном примере установите максимальную толщину, равную <span class="text-mark-1">1.5 мм.</span>
+													</span>
+													<span class="text">
+														<ol start="6">
+															<li>
+																Задайте максимальный игнорируемый разрыв в растровых линиях. Установите разрыв, равный 0.5 мм.
+															</li></br>
+															<li>
+																Для задания высоты текста нажмите кнопку <span class="text-mark-1">Измерить</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon24.png">&nbsp;значение напротив поля <span class="text-mark-1">Высота текста</span> и измерьте максимальную высоту текста:
+															</li>
+														</ol>
+													</span>	
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" width="450" height="258" src="./training_images/image038.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<ol start="8">
+															<li>													
+																Для задания размера стрелки нажмите кнопку <span class="text-mark-1">Измерить</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon24.png">&nbsp;значение напротив поля <span class="text-mark-1">Размер стрелки</span> и обведите стрелку прямоугольной рамкой:
+															</li>
+														</ol>
+													</span>	
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" width="450" height="268" src="./training_images/image039.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<ol start="9">
+															<li>
+																Точность установите в область низких значений и включите <span class="text-mark-1">ортогонализацию.</span>
+															</li></br>
+															<li>
+																На вкладке <b>Разделение</b> настройте свойства создаваемых векторных объектов (ширину, слой, цвет).
+															</li></br>
+															<li>
+																Для разделения интервала (от 0 до 1.5 мм) на несколько диапазонов (от 0 до 0.8 мм и от 0.8 мм до 1.5 мм)
+																щелкните левой клавишей мыши в нужном месте линейки таблицы толщин:
+															</li>
+														</ol>
+													</span>	
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" src="./training_images/image040.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<ol start="12">
+															<li>
+																Включите флажок <span class="text-mark-1">Использовать таблицу.</span>
+															</li></br>
+															<li>
+																Для первого диапазона задайте <span class="text-mark-1">ширину – 0.25 мм</span>, <span class="text-mark-1">слой – 1</span>, <span class="text-mark-1">цвет – красный.</span>
+																Для второго задайте <span class="text-mark-1">ширину – 0.5 мм</span>, <span class="text-mark-1">слой – 2</span>, <span class="text-mark-1">цвет – зеленый</span>.
+															</li>
+														</ol>
+													</span>	
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" src="./training_images/image041.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<ol start="14">
+															<li>
+																На вкладке <b>Тексты</b> задайте <b>горизонтальную и вертикальную ориентацию текста</b>, включите <span class="text-mark-1">Отдельно стоящие буквы</span>,
+																<b>файл с OCR-символами</b> задайте <span class="text-mark-1">default.ocr</span>.
+															</li>
+														</ol>
+													</span>	
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" src="./training_images/image042.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<ol start="15">
+															<li>
+																Для настройки OCR нужно задать набор шаблонов слов. Шаблон слова – это правило, задающее разрешенную последовательность символов
+																в пределах одного распознанного слова. Модуль OCR будет распознавать только те слова, которые соответствуют одному из заданных шаблонов.
+															</li></br>
+														</ol>
+													</span>
+													<span class="text" style="padding-left: 15px;">
+														Кнопки <span class="text-mark-1">Добавить шаблон</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon27.png">&nbsp;и <span class="text-mark-1">Удалить шаблон</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon28.png">&nbsp;управляют составом списка шаблонов слов.
+													</span>
+													<span class="text" style="padding-left: 15px;">
+														Ниже приведено формальное описание определения шаблона слова:</br>
+														[% [длина] тип символа] || [буква]] …</br>
+														</span>
+													<span class="text" style="padding-left: 15px;">
+														Параметры определения шаблона слова:</br>
+													</span>
+													<span class="text" style="padding-left: 15px;">
+														<table>
+															<tr>
+																<td>Параметр</td><td>Значение</td>
+															<tr>
+															</tr>
+																<td>[%]</td><td>Начало определения последовательности символов</td>
+															<tr>
+															</tr>
+																<td>[длина]</td><td>Любое десятичное число; отсутствует при переменной длине</td>
+															<tr>
+															</tr>
+																<td>[тип]</td><td>Тип символа (D, E, e, N, n, S)</td>
+															<tr>
+															</tr>
+																<td>[буква]</td><td>Одиночная буква</td>
+															</tr>
+														</table>
+													</span>
+													<span class="text" style="padding-left: 15px;">Кодировка типов символов:
+													</span>
+													<span class="text" style="padding-left: 15px;">
+														<table>
+															<tr>
+																<td>Кодировка символа</td><td>Расшифровка</td>
+															<tr>
+															</tr>
+																<td>D</td><td>Цифры</td>
+															<tr>
+															</tr>
+																<td>E</td><td>Буквы английского алфавита верхнего регистра (первый алфавит)</td>
+															<tr>
+															</tr>
+																<td>e</td><td>Буквы английского алфавита нижнего регистра (первый алфавит)</td>
+															<tr>
+															</tr>
+																<td>N</td><td>Прописные буквы национального алфавита, например, русского (второй алфавит)</td>
+															<tr>
+															</tr>
+																<td>n</td><td>Строчные буквы национального алфавита, например, русского (второй алфавит)</td>
+															<tr>
+															</tr>
+																<td>S</td><td>Специальные символы (знаки плюс и минус, знак равенства и т.д.)</td>
+															<tr>
+															</tr>
+																<td>%%</td><td>Одиночный символ «%»</td>
+															<tr>
+															</tr>
+																<td>[буква]</td><td>Одиночный символ</td>
+															</tr>
+														</table>
+													</span>
+													<span class="text" style="padding-left: 15px;">
+														Например:</span>
+														<span class="text" style="padding-left: 15px;">Шаблон Rz%D соответствует словам, которые начинаются с «Rz», после чего следует любая последовательность цифр, например, «Rz40», «Rz2.5», «Rz5000».</span>
+														<span class="text" style="padding-left: 15px;">Шаблон %1N%n соответствует словам национального алфавита с прописной первой буквой, например «Ганновер», «Осло», «Москва».</span>
+														<span class="text" style="padding-left: 15px;">Шаблон %D%% соответствует словам следующего образца: «20%», «1100%», «12.50%».</span>
+														<span class="text" style="padding-left: 15px;">Шаблон %DV соответствует словам следующего образца: «5V», «220V», «13.8V».</span>
+														<span class="text" style="padding-left: 15px;">В поле <span class="text-mark-1">Таблица высот</span> задайте возможные высоты текстов. Если установить флажок, то при генерации распознанных текстов модуль OCR будет создавать текстовые объекты 
+														с высотами из этого списка, производя округление распознанной высоты к ближайшей из заданных в списке.</span>
+														<span class="text" style="padding-left: 15px;">Настроенные параметры конверсии можно сохранить в файле набора параметров (*.tpl), нажав кнопку <span class="text-mark-1">Параметры:</span>
+														</span>
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" src="./training_images/image043.png" alt="пример">
+														</p>
+													</span>
+													<span class="text" style="padding-left: 15px;">
+														Сохраненный файл набора параметров можно использовать для обработки растров, имеющих схожее качество.
+													</span>
+													<span class="text">
+														<ol start="16">
+															<li>
+																Для принятия параметров конверсии нажмите кнопку <span class="text-mark-1">ОК</span>.
+															</li>
+														</ol>
+													</span>	
+													<span class="medium-header page2 paragraph2">Векторизация в режиме трассировки</span>
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" width="450" height="395" src="./training_images/image034.png" alt="пример">
+														</p>
+													</span>													
+													<span class="text">
+														<ol>
+															<li>В файле <b>NC_Mech.dwg</b> трассируйте сечение <b>А-А</b>.
+															</li>														
+														</ol>
+														<span class="text" style="padding-left: 11px;"></br>
+															1.1. Включите режим <span class="text-mark-1">Создание вектора и стирание растра</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon29.png">&nbsp;одним из способов:
+														</span>
+														<span class="text" style="padding-left: 11px;">
+															<ul type="disc">
+																<li>
+																	ЛЕНТА:<span class="text-mark-1"> Растр</span> &gt; <span class="text-mark-1"> Трассировка</span> &gt; <span class="text-mark-1"> Создание вектора и стирание растра</span>   
+																</li></br>
+																<li>
+																	Функц. панель ИНСТРУМЕНТЫ: <span class="text-mark-1"> Растровый учебник</span> &gt; <span class="text-mark-1"> Трассировка</span> &gt; <span class="text-mark-1"> Создание вектора и стирание растра</span>   
+																</li></br>
+															</ul>
+														</span>
+														<span class="text" style="padding-left: 11px;">
+															1.2. Запустите команду <span class="text-mark-1">Автотрассировка</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon30.png">&nbsp;одним из способов:
+														</span>
+														<span class="text" style="padding-left: 11px;">
+															<ul type="disc">
+																<li>
+																	ЛЕНТА:<span class="text-mark-1"> Растр</span> &gt; <span class="text-mark-1"> Трассировка</span> &gt; <span class="text-mark-1"> Автотрассировка</span>   
+																</li></br>
+																<li>
+																	Функц. панель ИНСТРУМЕНТЫ: <span class="text-mark-1"> Растровый учебник</span> &gt; <span class="text-mark-1"> Трассировка</span> &gt; <span class="text-mark-1"> Автотрассировка</span>   
+																</li></br>
+															</ul>
+														</span>
+													</span>	
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" width="450" height="416" src="./training_images/image044.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<ol start="2">
+															<li>Трассируйте осевые и выносные линии.
+															</li>
+														</ol>
+														<span class="text" style="padding-left: 11px;">
+															2.1. Запустите команду <span class="text-mark-1">Отрезок</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon31.png">&nbsp;одним из способов:
+														</span>
+														<span class="text" style="padding-left: 11px;">
+															<ul type="disc">
+																<li>
+																	ЛЕНТА:<span class="text-mark-1"> Растр</span> &gt; <span class="text-mark-1"> Трассировка</span> &gt; <span class="text-mark-1"> Отрезок</span>   
+																</li></br>
+																<li>
+																	Функц. панель ИНСТРУМЕНТЫ: <span class="text-mark-1"> Растровый учебник</span> &gt; <span class="text-mark-1"> Трассировка</span> &gt; <span class="text-mark-1"> Отрезок</span>   
+																</li>
+															</ul>
+														</span>
+														<span class="text" style="padding-left: 11px;">
+															2.2. Укажите начальные и конечные точки этих линий:
+														</span>
+													</span>
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" width="450" height="417" src="./training_images/image045.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<ol start="3">
+															<li>
+																При необходимости средствами nanoCAD корректируйте полученные векторы (продлите до границы, обрежьте по границе) и поменяйте тип линий.
+															</li></br>
+															<li>
+																Штриховку в замкнутом контуре выполните средствами nanoCAD.
+															</li>
+														</ol>
+														<span class="text" style="padding-left: 11px;">
+															4.1. Скройте отображение растра.
+														</span>
+														<span class="text" style="padding-left: 35px;">
+															Запустите команду <span class="text-mark-1">Скрытие растра</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon32.png">&nbsp;одним из способов:
+														</span></br>
+														<span class="text" style="padding-left: 11px;">
+															<ul type="disc">
+																<li>
+																	ЛЕНТА:<span class="text-mark-1"> Растр</span> &gt; <span class="text-mark-1"> Визуализация</span> &gt; <span class="text-mark-1"> Скрытие растра</span>   
+																</li></br>
+																<li>
+																	Функц. панель ИНСТРУМЕНТЫ: <span class="text-mark-1"> Растровый учебник</span> &gt; <span class="text-mark-1"> Визуализация</span> &gt; <span class="text-mark-1"> Скрытие растра</span>   
+																</li>
+															</ul>
+														</span>
+														<span class="text" style="padding-left: 11px;">
+															4.2. Создайте штриховку.
+														</span>														
+														<span class="text" style="padding-left: 35px;">
+															Запустите команду <span class="text-mark-1">Штриховка</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon33.png">&nbsp;одним из способов:
+														</span></br>
+														<span class="text" style="padding-left: 11px;">
+															<ul type="disc">
+																<li>
+																	ЛЕНТА:<span class="text-mark-1"> Построение</span> &gt; <span class="text-mark-1"> Контурные объекты и заливка</span> &gt; <span class="text-mark-1">Штриховка</span>   
+																</li></br>
+															<li>
+																Функц. панель ИНСТРУМЕНТЫ: <span class="text-mark-1"> Мои инструменты</span> &gt; <span class="text-mark-1"> Черчение</span> &gt; <span class="text-mark-1"> Штриховка</span>   
+															</li></br>
+															</ul>
+														</span>
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" width="450" height="572" src="./training_images/image046.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<span class="text" style="padding-left: 35px;">
+															Задайте <span class="text-mark-1">тип – Стандартный</span>, <span class="text-mark-1">образец – ANSI31</span>, <span class="text-mark-1">масштаб -1.</span>
+														</span>
+														<span class="text" style="padding-left: 35px;">													
+															Нажмите кнопку <span class="text-mark-1">Добавить точки выбора</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon34.png">&nbsp;и укажите точки внутри контуров штриховки:
+														</span>
+													</span>	
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" src="./training_images/image047.png" alt="пример">
+														</p>
+													</span>
+													<span class="text">
+														<ol start="5">
+															<li>
+															Нажмите <span class="text-mark-1">Enter</span> и в окне <b>Штриховка</b> нажмите <span class="text-mark-1">Ок</span>.
+															</li>
+														</ol>
+													</span>
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" width="450" height="439" src="./training_images/image048.png" alt="пример">
+														</p>
+													</span>
+													<span class="medium-header page2 paragraph3">Векторизация в автоматическом режиме</span>
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" width="450" height="395" src="./training_images/image034.png" alt="пример">
+														</p>
+													</span>													
+													<span class="text">
+														<ol start="1">
+															<li>В файле <b>NC_Mech.dwg</b> включите отображение растра командой <span class="text-mark-1">Скрыть отображение растра</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon35.png">&nbsp;одним из следующих способов:</br>														
+																<ul type="disc"></br>
+																	<li>
+																		ЛЕНТА:<span class="text-mark-1"> Растр</span> &gt; <span class="text-mark-1"> Визуализация</span> &gt; <span class="text-mark-1">Скрытие растра</span>   
+																	</li></br>
+																	<li>
+																		Функц. панель ИНСТРУМЕНТЫ: <span class="text-mark-1">Растровый учебник</span> &gt; <span class="text-mark-1"> Визуализация</span> &gt; <span class="text-mark-1"> Скрытие растра</span>   
+																	</li></br>
+																</ul>
+															</li>
+															<li>Запустите команду <span class="text-mark-1">Растр в векторы</span>&nbsp;<img align="middle" width="26" height="26" src="./training_images/icon36.png">&nbsp;одним из следующих способов:
+																<ul type="disc">
+																	<li>
+																		ЛЕНТА:<span class="text-mark-1"> Растр</span> &gt; <span class="text-mark-1"> Преобразование</span> &gt; <span class="text-mark-1">Растр в вектор</span>   
+																	</li></br>
+																	<li>
+																		Функц. панель ИНСТРУМЕНТЫ: <span class="text-mark-1">Растровый учебник</span> &gt; <span class="text-mark-1"> Преобразование</span> &gt; <span class="text-mark-1">Растр в вектор</span>   
+																	</li></br>
+																</ul>															
+															</li>
+														</ol>	
+													</span>	
+													<span class="text">
+														<p style="text-align: center;">
+															<img align="middle" width="450" height="397" src="./training_images/image049.png" alt="пример">
+														</p>
+													</span>
+													<!--<span class="big-header page1 paragraph1 nomargin-header">Файлы и учебные материалы</span>
+													<span class="text">
+														<span class="component folder">
+															<span class="row">
+																<span class="description">
+																	<span class="brief">
+																		<span class="text">
+																			<p style="text-align: left;">
+																				<a class="anc" href="javascript:void(0)" onclick="console.log('ssevent_onclick_testdrive_pdf' + '/Raster/Тест-драйв nanoCAD Растровое радактирование.pdf')">
+																					<span class="link">
+																						<img align="middle" src="./training_images/image006.png" alt="Тест-драйв">
+																						<span class="title">Тест-драйв</span>
+																					</span>
+																				</a>
+																				<a class="anc" href="javascript:void(0)" onclick="console.log('ssevent_onclick_testdrive_dir' + '/Raster/')">
+																					<span class="link">
+																						<img align="middle" src="./training_images/image007.png" alt="Файлы тест-драйва">
+																						<span class="title">Файлы тест-драйва</span>
+																					</span>
+																				</a>
+																			</p>
+																		</span>
+																	</span>
+																</span>
+															</span>
+														</span>												
+													</span>-->													
+												</span>
+											</span>
+										</span>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Bottom border  -->
+		<div id="bottom-border">
+		</div>
+    </div>
+  </body>
+</html>

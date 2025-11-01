@@ -1,0 +1,39 @@
+/* Custom styles that can't be achieved with Tailwind */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    scroll-snap-type: y proximity;
+}
+
+section {
+    scroll-snap-align: start;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* Custom animation for modal */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-content {
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+/* Custom hover effect for portfolio items */
+.portfolio-item:hover img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Responsive adjustments */

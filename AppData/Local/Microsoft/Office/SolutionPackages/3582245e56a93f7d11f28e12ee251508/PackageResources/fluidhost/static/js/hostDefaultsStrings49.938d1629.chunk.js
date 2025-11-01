@@ -1,0 +1,2 @@
+(this.webpackJsonpfluidhost=this.webpackJsonpfluidhost||[]).push([[136],{1163:function(a){a.exports=JSON.parse('{"strings":{"shareDialogErrorTitle":{"s":"I rahua te tiri","f":0},"shareDialogErrorMessage":{"s":"Ka aroha, k\u0101ore e taea e m\u0101tou te t\u016bmau i t\u0113nei w\u0101. Ngana an\u014d \u0101 muri ake.","f":0},"copyDialogErrorTitle":{"s":"I rahua te t\u0101rua","f":0}}}')}}]);
+//# sourceMappingURL=hostDefaultsStrings49.938d1629.chunk.js.map

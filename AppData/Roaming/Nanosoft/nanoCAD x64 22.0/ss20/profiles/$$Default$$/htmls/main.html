@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Main</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href="styles.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript">	
+			function resizeBody() {
+				if (!document.getElementById('main-body'))
+					return;
+				var obj = document.getElementById('main-body'); 
+				var width = obj.offsetWidth;
+				var height = obj.offsetHeight;
+			}		
+			function openPopup() {
+				var obj = document.getElementById('popup-window-wrapper');
+				obj.style.display = 'block';
+			}
+			function closePopup() {
+				var obj = document.getElementById('popup-window-wrapper');
+				obj.style.display = 'none';
+			}
+	</script>
+  </head>
+  <body id="main-body" onload="resizeBody()" onresize="resizeBody()" onclick="console.log('ssevent_onclick_main_body')">
+    <!-- Top floating menu mask -->
+    <div id="top-menu-mask">
+		<div id="logo-top-left"></div>
+	</div>
+    <!-- Bottom floating menu mask -->
+    <div id="bottom-menu-mask"></div>
+	<!-- Body content -->
+    <div id="body">
+		<!-- Top floating menu  -->
+		<div id="top-menu">
+			<div id="top-menu-wrapper">
+				<div id="loading-status">
+					<span id="loading-status-text">Загружается платформа... (6069)</span>
+					<img id="loading-status-progressbar" src="images/progressbar.gif" class="">
+				</div>
+				<div id="top-menu-content">
+					<span id="top-menu-tab-main" class="item label" onclick="console.log('ssevent_onclick_' + id)">
+						<a>Файлы</a>
+					</span>
+					<!--<span id="top-menu-tab-license" class="item label" onclick="console.log('ssevent_onclick_' + id)">
+						<a>Экосистема</a>
+					</span>
+					<span id="top-menu-tab-training" class="item label" onclick="console.log('ssevent_onclick_' + id)">
+						<a>Обучение</a>
+					</span>-->
+					<span id="top-menu-tab-whatsnew" class="item label" onclick="console.log('ssevent_onclick_' + id)">
+						<a>Что нового</a>
+					</span>
+					<span id="top-menu-tab-browser" class="item label" onclick="console.log('ssevent_onclick_' + id)">
+						<a><span class="icon"></span></a>
+					</span>	
+				</div>
+				<div id="top-menu-navibuttons">
+					<!-- <span id="top-menu-tab-home" class="item label" onclick="console.log('ssevent_onclick_' + id)">
+						<a><span id="top-menu-tab-home-icon" class="icon hidden"></span></a>
+					</span>	 -->	
+					<span id="top-menu-tab-back" class="item label" onclick="console.log('ssevent_onclick_' + id)">
+						<a><span id="top-menu-tab-back-icon" class="item hidden lable"></span></a>
+					</span>
+					<span id="top-menu-tab-fwd" class="item label" onclick="console.log('ssevent_onclick_' + id)">
+						<a><span id="top-menu-tab-fwd-icon" class="item hidden lable"></span></a>
+					</span>	
+				</div>
+			</div>
+		</div>
+		<!-- Bottom floating menu  -->
+		<div id="bottom-menu">
+			<div id="bottom-menu-wrapper">
+				<div id="bottom-menu-content">
+					<span id="bottom-menu-link-4" class="item" onclick="location='https://www.nanodev.ru/contacts/'">
+						<span class="icon"></span>
+						<span class="text"><a>Напишите нам</a></span>
+					</span>			  
+					<span id="bottom-menu-link-5" class="item" onclick="location='http://www.nanodev.ru/'">
+						<span class="icon"></span>
+						<span class="text"><a>nanodev.ru</a></span>
+					</span>			  
+					<span id="check-autohide" class="item tooltip" onclick="console.log('ssevent_onclick_' + id)">
+						<span id="icon-1" class="icon"></span>
+						<span class="text"><a>Автозакрывать<span class="tooltiptext"><b>Автоматически закрывать экран приветствия после загрузки приложения.</b>При включении режима "Автозакрытия" экран приветствия будет скрываться в случае если пользователь не производил в нём никаких действий. В случае хотя бы одного клика в область окна оно останется на экране независимо от значения этой настройки.</span></a></span>
+					</span>		  
+					<span id="close-button" class="item" onclick="console.log('ssevent_onclick_' + id)">
+						<span class="text"><a>Закрыть</a></span>
+					</span>		  
+				</div>
+			</div>
+		</div>
+    </div>
+	<!-- Sub frames -->
+	<div id="sub-frames">
+		<iframe id="sub-frame" name="nanocad_startscreen_main_subframe" src="c:\users\sashu\appdata\roaming\nanosoft\nanocad x64 22.0\ss20\profiles\$$default$$\htmls\splash.html">
+		</iframe>
+	</div>
+		<!-- Popup  -->
+		<div id="popup-window-wrapper" class="">
+			<div id="popup-window-content">
+				<div class="left-column">
+					<div class="main-text">
+						<span class="icon"></span>
+						<span class="text">Для улучшения качества наших продуктов мы собираем обезличенную статистику 
+						использования функционала. Собранные данные позволят повысить эргономику интерфейса. 
+						</span>
+					</div>
+					<div class="links">
+						<span class="left"><a href='#' id="popup-detailed-link" onclick="console.log('ssevent_onclick_' + id)">Подробнее</a></span>
+					</div>
+				</div>
+				<div class="right-column">
+					<div class="main-button">
+						<span><a href='#' id="popupAccept" onclick="console.log('ssevent_onclick_' + id)">Понятно</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+  </body>
+</html>

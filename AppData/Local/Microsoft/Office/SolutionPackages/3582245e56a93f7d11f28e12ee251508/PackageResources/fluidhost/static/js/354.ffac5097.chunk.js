@@ -1,0 +1,2 @@
+(this.webpackJsonpfluidhost=this.webpackJsonpfluidhost||[]).push([[354],{671:function(o){o.exports=JSON.parse('{"ControlClickToFollowLink":"Ba\u011flant\u0131ya gitmek i\xe7in Ctrl tu\u015funu bas\u0131l\u0131 tutarak t\u0131klay\u0131n","GettingThisReady":"Haz\u0131rlan\u0131yor...","Remove":"Kald\u0131r","Loading":"Y\xfckleniyor","NewLiveComponentFileName":"Canl\u0131 Bile\u015fen","NewLoopComponentFileName":"Loop bile\u015feni","CopyLink":"Ba\u011flant\u0131y\u0131 kopyalay\u0131n"}')}}]);
+//# sourceMappingURL=354.ffac5097.chunk.js.map

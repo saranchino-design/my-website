@@ -1,0 +1,411 @@
+<html>
+  <head>
+    <title>Indexing diagnostics of 'main.py'</title>
+    <style>body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+table {
+  width: 80%;
+}
+
+table.two-columns td {
+  width: 50%;
+}
+
+th, td {
+  padding: 3px;
+}
+
+th {
+  background: lightgrey;
+}
+
+td {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+        
+.stats-content {
+  margin-left: 20%;
+}
+
+.aggregate-report-content {
+  margin-left: 10%;
+}
+
+.navigation-bar {
+  width: 15%;
+  background-color: lightgrey;
+  position: fixed;
+  height: 100%;
+}
+
+div.navigation-bar ul {
+  list-style-type: none;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+}
+
+div.navigation-bar ul li a, label {
+  display: block;
+  color: #000;
+  padding: 8px 20px;
+  text-decoration: none;
+}
+
+label input {
+  margin-left: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+div.navigation-bar ul li a:hover {
+  background-color: #555;
+  color: white;
+}
+
+.minor-data {}
+
+.invisible {
+  display: none;
+}
+
+.jetbrains-logo {
+  width: 50%;
+  bottom: 5%;
+  position: absolute;
+  left: 20%;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+.linkable-table-row:hover {
+  background: #f2f3ff;
+  outline: none;
+  cursor: pointer;
+}</style>
+    <script>document.addEventListener("DOMContentLoaded", () => {
+  const rows = document.getElementsByClassName("linkable-table-row")
+  for (const row of rows) {
+    const href = row.getAttribute("href")
+    row.addEventListener("click", () => {
+      window.open(href, "_blank");
+    });
+  }
+});</script>
+  </head>
+  <body>
+    <div class="aggregate-report-content">
+      <h1 class="Project name"></h1>
+main.py
+      <div>
+        <h1 class="Indexing history"></h1>
+        <table class="centered-text"><caption style="caption-side: bottom; text-align: right; font-size: 14px">Hover for details</caption>
+          <thead>
+            <tr>
+              <th colspan="7">Time</th>
+              <th colspan="6">Files</th>
+              <th rowspan="2">IDE</th>
+              <th rowspan="2">Type</th>
+            </tr>
+            <tr>
+              <th>Started</th>
+              <th>Total</th>
+              <th>Creating iterators</th>
+              <th>Scanning</th>
+              <th>Indexing</th>
+              <th>Content loading</th>
+              <th>Finished</th>
+              <th>Providers</th>
+              <th>Scanned</th>
+              <th>Shared indexes (w/o content loading)</th>
+              <th>Scheduled for indexing</th>
+              <th>Shared indexes (content loaded)</th>
+              <th>Total indexed (shared indexes included)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="linkable-table-row" href="diagnostic-2024-11-30-16-47-56.745.html">
+              <td><strong class="On project open"></strong><br>16:47:43 30 нояб.</td>
+              <td>13 s 242 ms</td>
+              <td>153 ms</td>
+              <td>7 s 907 ms</td>
+              <td>4 s 910 ms</td>
+              <td>2 s 797 ms</td>
+              <td>16:47:56 30 нояб.</td>
+              <td>6</td>
+              <td>8907</td>
+              <td>0</td>
+              <td>904</td>
+              <td>714</td>
+              <td>904</td>
+              <td>PC-223.8617.48</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row" href="diagnostic-2024-02-07-11-47-29.030.html">
+              <td><strong class="On project open"></strong><br>11:47:23 07 февр.</td>
+              <td>5 s 87 ms</td>
+              <td>242 ms</td>
+              <td>4 s 355 ms</td>
+              <td>236 ms</td>
+              <td>1 ms</td>
+              <td>11:47:29 07 февр.</td>
+              <td>6</td>
+              <td>8907</td>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+              <td>1</td>
+              <td>PC-223.8617.48</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row" href="diagnostic-2024-01-21-12-36-16.815.html">
+              <td><strong class="On refresh of 34 files"></strong><br>12:36:15 21 янв.</td>
+              <td>280 ms</td>
+              <td>0</td>
+              <td>&lt; 1 ms</td>
+              <td>279 ms</td>
+              <td>&lt; 1 ms</td>
+              <td>12:36:15 21 янв.</td>
+              <td>1</td>
+              <td>34</td>
+              <td>0</td>
+              <td>34</td>
+              <td>0</td>
+              <td>34</td>
+              <td>PC-223.8617.48</td>
+              <td>refresh</td>
+            </tr>
+            <tr class="linkable-table-row" href="diagnostic-2024-01-21-12-36-15.702.html">
+              <td><strong class="On project open"></strong><br>12:36:10 21 янв.</td>
+              <td>4 s 767 ms</td>
+              <td>269 ms</td>
+              <td>3 s 805 ms</td>
+              <td>336 ms</td>
+              <td>1 ms</td>
+              <td>12:36:15 21 янв.</td>
+              <td>6</td>
+              <td>8907</td>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+              <td>1</td>
+              <td>PC-223.8617.48</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row" href="diagnostic-2024-01-15-15-36-47.671.html">
+              <td><strong class="On refresh of 127 files"></strong><br>15:36:47 15 янв.</td>
+              <td>550 ms</td>
+              <td>0</td>
+              <td>0</td>
+              <td>550 ms</td>
+              <td>8 ms</td>
+              <td>15:36:47 15 янв.</td>
+              <td>1</td>
+              <td>127</td>
+              <td>0</td>
+              <td>127</td>
+              <td>0</td>
+              <td>127</td>
+              <td>PC-223.8617.48</td>
+              <td>refresh</td>
+            </tr>
+            <tr class="linkable-table-row" href="diagnostic-2024-01-15-15-36-46.111.html">
+              <td><strong class="On refresh of 26 files"></strong><br>15:36:45 15 янв.</td>
+              <td>5 ms</td>
+              <td>0</td>
+              <td>&lt; 1 ms</td>
+              <td>5 ms</td>
+              <td>&lt; 1 ms</td>
+              <td>15:36:46 15 янв.</td>
+              <td>1</td>
+              <td>26</td>
+              <td>0</td>
+              <td>26</td>
+              <td>0</td>
+              <td>26</td>
+              <td>PC-223.8617.48</td>
+              <td>refresh</td>
+            </tr>
+            <tr class="linkable-table-row" href="diagnostic-2024-01-15-15-36-45.994.html">
+              <td><strong class="Merged changes in: &quot;Module 'Курсовая_Работа_2' (Курсовая_Работа_2)&quot;, &quot;Python SDK Python 3.11 (Курсовая_Работа_2) C:/Users/sashu/AppData/Local/Programs/Python/Python311/DLLs, C:/Users/sashu/AppData/Local/Programs/Python/Python311/Lib, C:/Users/sashu/AppData/Local/Programs/Python/Python311, C:/Users/sashu/OneDrive/Рабочий стол/Папки/Учеба Саши/Домашние работы/Курс_2/Курсовая_Работа_2/агт, C:/Users/sashu/OneDrive/Рабочий стол/Папки/Учеба Саши/Домашние работы/Курс_2/Курсовая_Работа_2/агт/Lib/site-packages, C:/Users/sashu/AppData/Local/JetBrains/PyCharmCE2022.3/python_stubs/-881111057, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/python-skeletons, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stdlib, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/six, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/boto, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/mock, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/pytz, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/toml, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/annoy, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/babel, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/emoji, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/first, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/fpdf2, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/ldap3, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/polib, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/redis, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/regex, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/retry, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/ujson, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/bleach, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/caldav, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/docopt, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/hdbcli, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/invoke, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/passpy, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/Pillow, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/psutil, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/pycurl, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/pynput, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/pysftp, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/PyYAML, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/stripe, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/xxhash, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/appdirs, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/certifi, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/chardet, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/chevron, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/passlib, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/pyaudio, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/PyMySQL, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/pyvmomi, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/slumber, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/tzlocal, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/urllib3, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/vobject, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/aiofiles, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/colorama, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/croniter, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/docutils, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/filelock, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/html5lib, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/httplib2, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/jmespath, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/Markdown, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/oauthlib, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/openpyxl, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/paramiko, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/psycopg2, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/pyflakes, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/Pygments, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/requests, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/selenium, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/tabulate, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/toposort, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/waitress, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/braintree, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/decorator, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/freezegun, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/playsound, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/pyOpenSSL, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/pyRFC3339, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/termcolor, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/ttkthemes, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/typed-ast, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/xmltodict, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/cachetools, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/commonmark, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/dateparser, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/Deprecated, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/Flask-Cors, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/frozendict, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/jsonschema, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/pyfarmhash, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/Send2Trash, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/setuptools, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/simplejson, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/SQLAlchemy, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/contextvars, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/dataclasses, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/entrypoints, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/flake8-2020, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/JACK-Client, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/mysqlclient, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/opentracing, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/pep8-naming, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/prettytable, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/python-jose, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/python-nmap, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/stdlib-list, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/atomicwrites, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/aws-xray-sdk, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/cryptography, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/editdistance, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/parsimonious, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/whatthepatch, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/click-spinner, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/DateTimeRange, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/humanfriendly, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/python-gflags, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/beautifulsoup4, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/characteristic, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/flake8-bugbear, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/python-slugify, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/singledispatch, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/flake8-builtins, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/flake8-simplify, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/mypy-extensions, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/python-dateutil, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/Flask-SQLAlchemy, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/flake8-docstrings, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/flake8-plugin-utils, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/pytest-lazy-fixture, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/flake8-rst-docstrings, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/flake8-typing-imports, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/backports.ssl_match_hostname&quot; with changes in: &quot;Python SDK Python 3.11 (Курсовая_Работа_2) C:/Users/sashu/AppData/Local/Programs/Python/Python311/DLLs, C:/Users/sashu/AppData/Local/Programs/Python/Python311/Lib, C:/Users/sashu/AppData/Local/Programs/Python/Python311, C:/Users/sashu/OneDrive/Рабочий стол/Папки/Учеба Саши/Домашние работы/Курс_2/Курсовая_Работа_2/агт, C:/Users/sashu/OneDrive/Рабочий стол/Папки/Учеба Саши/Домашние работы/Курс_2/Курсовая_Работа_2/агт/Lib/site-packages, C:/Users/sashu/AppData/Local/JetBrains/PyCharmCE2022.3/python_stubs/-881111057, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/python-skeletons, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stdlib, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/six, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/boto, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/mock, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/pytz, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/toml, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/annoy, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/babel, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/emoji, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/first, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/fpdf2, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/ldap3, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/polib, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/redis, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/regex, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/retry, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/ujson, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/bleach, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/caldav, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/docopt, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/hdbcli, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/invoke, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/passpy, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/Pillow, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/psutil, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/pycurl, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/pynput, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/pysftp, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/PyYAML, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/stripe, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/xxhash, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/appdirs, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/certifi, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/chardet, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/chevron, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/passlib, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/pyaudio, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/PyMySQL, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/pyvmomi, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/slumber, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/tzlocal, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/urllib3, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/vobject, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/aiofiles, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/colorama, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/croniter, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/docutils, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/filelock, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/html5lib, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/httplib2, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/jmespath, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/Markdown, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/oauthlib, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/openpyxl, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/paramiko, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/psycopg2, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/pyflakes, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/Pygments, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/requests, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/selenium, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/tabulate, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/toposort, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/waitress, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/braintree, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/decorator, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/freezegun, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/playsound, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/pyOpenSSL, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/pyRFC3339, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/termcolor, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/ttkthemes, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/typed-ast, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/xmltodict, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/cachetools, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/commonmark, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/dateparser, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/Deprecated, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/Flask-Cors, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/frozendict, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/jsonschema, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/pyfarmhash, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/Send2Trash, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/setuptools, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/simplejson, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/SQLAlchemy, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/contextvars, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/dataclasses, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/entrypoints, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/flake8-2020, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/JACK-Client, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/mysqlclient, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/opentracing, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/pep8-naming, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/prettytable, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/python-jose, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/python-nmap, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/stdlib-list, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/atomicwrites, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/aws-xray-sdk, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/cryptography, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/editdistance, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/parsimonious, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/whatthepatch, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/click-spinner, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/DateTimeRange, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/humanfriendly, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/python-gflags, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/beautifulsoup4, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/characteristic, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/flake8-bugbear, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/python-slugify, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/singledispatch, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/flake8-builtins, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/flake8-simplify, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/mypy-extensions, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/python-dateutil, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/Flask-SQLAlchemy, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/flake8-docstrings, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/flake8-plugin-utils, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/pytest-lazy-fixture, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/flake8-rst-docstrings, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/flake8-typing-imports, C:/Users/sashu/PyCharm Community Edition 2022.3.2/plugins/python-ce/helpers/typeshed/stubs/backports.ssl_match_hostname&quot;"></strong><br>15:36:41 15 янв.</td>
+              <td>4 s 153 ms</td>
+              <td>0</td>
+              <td>2 s 446 ms</td>
+              <td>1 s 632 ms</td>
+              <td>1 s 34 ms</td>
+              <td>15:36:45 15 янв.</td>
+              <td>2</td>
+              <td>8564</td>
+              <td>0</td>
+              <td>771</td>
+              <td>714</td>
+              <td>771</td>
+              <td>PC-223.8617.48</td>
+              <td>partial</td>
+            </tr>
+            <tr class="linkable-table-row" href="diagnostic-2024-01-15-15-30-13.757.html">
+              <td><strong class="On project open"></strong><br>15:30:10 15 янв.</td>
+              <td>3 s 563 ms</td>
+              <td>313 ms</td>
+              <td>3 s 30 ms</td>
+              <td>0</td>
+              <td>0</td>
+              <td>15:30:13 15 янв.</td>
+              <td>5</td>
+              <td>228</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>PC-223.8617.48</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row" href="diagnostic-2024-01-14-12-49-30.044.html">
+              <td><strong class="On project open"></strong><br>12:49:26 14 янв.</td>
+              <td>3 s 650 ms</td>
+              <td>149 ms</td>
+              <td>3 s 158 ms</td>
+              <td>0</td>
+              <td>0</td>
+              <td>12:49:30 14 янв.</td>
+              <td>5</td>
+              <td>228</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>PC-223.8617.48</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row" href="diagnostic-2024-01-13-12-48-55.168.html">
+              <td><strong class="On project open"></strong><br>12:48:53 13 янв.</td>
+              <td>1 s 908 ms</td>
+              <td>330 ms</td>
+              <td>1 s 370 ms</td>
+              <td>0</td>
+              <td>0</td>
+              <td>12:48:55 13 янв.</td>
+              <td>5</td>
+              <td>227</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>PC-223.8617.48</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row" href="diagnostic-2024-01-13-12-48-43.678.html">
+              <td><strong class="On project open"></strong><br>12:48:41 13 янв.</td>
+              <td>1 s 919 ms</td>
+              <td>415 ms</td>
+              <td>1 s 237 ms</td>
+              <td>0</td>
+              <td>0</td>
+              <td>12:48:43 13 янв.</td>
+              <td>5</td>
+              <td>227</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>PC-223.8617.48</td>
+              <td>full on project open</td>
+            </tr>
+            <tr class="linkable-table-row" href="diagnostic-2024-01-13-12-46-02.684.html">
+              <td><strong class="On project open"></strong><br>12:46:01 13 янв.</td>
+              <td>1 s 188 ms</td>
+              <td>0</td>
+              <td>680 ms</td>
+              <td>276 ms</td>
+              <td>2 ms</td>
+              <td>12:46:02 13 янв.</td>
+              <td>5</td>
+              <td>222</td>
+              <td>0</td>
+              <td>6</td>
+              <td>0</td>
+              <td>6</td>
+              <td>PC-223.8617.48</td>
+              <td>full on project open</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h1 class="Shared Indexes"></h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Kind</th>
+              <th>Name</th>
+              <th>Size</th>
+              <th>Download time</th>
+              <th>Download speed</th>
+              <th>Status</th>
+              <th>ID</th>
+              <th>Generation time</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div>
+        <h1 class="Scanning to push properties of changed files"></h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Reason</th>
+              <th>Full duration</th>
+              <th>Is cancelled</th>
+              <th>Number</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>16:46:49 15 янв.</td>
+              <td>Push on VFS changes</td>
+              <td>16 ms</td>
+              <td>fully finished</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>15:36:48 15 янв.</td>
+              <td>Push on VFS changes</td>
+              <td>&lt; 1 ms</td>
+              <td>fully finished</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>15:36:41 15 янв.</td>
+              <td>Push on VFS changes</td>
+              <td>1 ms</td>
+              <td>fully finished</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>12:48:31 13 янв.</td>
+              <td>Push on VFS changes</td>
+              <td>31 ms</td>
+              <td>fully finished</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

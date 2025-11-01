@@ -1,0 +1,2 @@
+(this.webpackJsonpfluidhost=this.webpackJsonpfluidhost||[]).push([[174],{1197:function(s){s.exports=JSON.parse('{"strings":{"shareDialogErrorTitle":{"s":"Kh\xf4ng chia s\u1ebb \u0111\u01b0\u1ee3c","f":0},"shareDialogErrorMessage":{"s":"R\u1ea5t ti\u1ebfc, ch\xfang t\xf4i kh\xf4ng th\u1ec3 ti\u1ebfp c\u1eadn v\u1edbi m\xe1y ch\u1ee7 ngay b\xe2y gi\u1edd. Vui l\xf2ng th\u1eed l\u1ea1i sau.","f":0},"copyDialogErrorTitle":{"s":"Kh\xf4ng th\u1ec3 sao ch\xe9p","f":0}}}')}}]);
+//# sourceMappingURL=hostDefaultsStrings83.d4a19c69.chunk.js.map

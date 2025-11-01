@@ -1,0 +1,4 @@
+(function() {
+var toc =  [{"type":"item","name":"Местные разрезы","url":"WN/WN.htm#Местные_разрезыbc-35"},{"type":"item","name":"Новые возможности работы с листовыми телами","url":"WN/WN.htm#Новые_возможности_работыbc-36"},{"type":"item","name":"Свойства крепежа","url":"WN/WN.htm#Свойства_крепежаbc-37"},{"type":"item","name":"Доработка функционала спецификации","url":"WN/WN.htm#Доработка_функционалаbc-38"},{"type":"item","name":"Новые материалы в базе","url":"WN/WN.htm#Новые_материалы_в_базеbc-39"},{"type":"item","name":"Другие изменения","url":"WN/WN.htm#Другие_измененияbc-40"}];
+window.rh.model.publish(rh.consts('KEY_TEMP_DATA'), toc, { sync:true });
+})();

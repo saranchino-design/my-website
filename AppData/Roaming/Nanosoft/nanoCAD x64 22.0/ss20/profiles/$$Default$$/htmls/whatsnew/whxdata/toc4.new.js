@@ -1,0 +1,4 @@
+(function() {
+var toc =  [{"type":"item","name":"Оформление листов","url":"WN/WN.htm#Оформление_листовbc-25"},{"type":"item","name":"Заполнение разрыва сети","url":"WN/WN.htm#Заполнение_разрыва_сетиbc-26"},{"type":"item","name":"Добавление ребра","url":"WN/WN.htm#Добавление_ребраbc-27"},{"type":"item","name":"Отрисовка откоса","url":"WN/WN.htm#Отрисовка_откосаbc-28"},{"type":"item","name":"Обновленные команды","url":"WN/WN.htm#Обновленные_командыbc-29"},{"type":"item","name":"Импорт геоточек","url":"WN/WN.htm#Импорт_геоточекbc-30"},{"type":"item","name":"Обновление эргономики","url":"WN/WN.htm#Обновление_эргономикиbc-31"},{"type":"item","name":"Объекты Civil 3D","url":"WN/WN.htm#Объекты_Civil_3Dbc-32"},{"type":"item","name":"Работа с архивом измерений","url":"WN/WN.htm#Работа_с_архивомbc-33"}];
+window.rh.model.publish(rh.consts('KEY_TEMP_DATA'), toc, { sync:true });
+})();

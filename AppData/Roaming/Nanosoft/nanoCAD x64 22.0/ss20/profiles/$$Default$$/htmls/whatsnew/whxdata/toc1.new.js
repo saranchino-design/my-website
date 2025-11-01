@@ -1,0 +1,4 @@
+(function() {
+var toc =  [{"type":"book","name":"Новый функционал Платформы","key":"toc2","url":"WN/WN.htm#Новый_функционалbc-1"},{"type":"book","name":"Новое в 3D-модуле","key":"toc3","url":"WN/WN.htm#Новое_в_3D_модулеbc-19"},{"type":"book","name":"Новое в модуле Топоплан","key":"toc4","url":"WN/WN.htm#Новое_в_модуле_Топопланbc-24"},{"type":"book","name":"Новое в модуле Механика","key":"toc5","url":"WN/WN.htm#Новое_в_модуле_Механикаbc-34"},{"type":"book","name":"Новое в модуле СПДС","key":"toc6","url":"WN/WN.htm#Новое_в_модуле_СПДСbc-41"}];
+window.rh.model.publish(rh.consts('KEY_TEMP_DATA'), toc, { sync:true });
+})();
