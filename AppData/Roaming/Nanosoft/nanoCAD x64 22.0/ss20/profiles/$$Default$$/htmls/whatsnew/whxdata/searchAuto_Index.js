@@ -1,1 +1,0 @@
-rh._.exports({Model:["1050","к","п"],totalCount:3591,nGram:3,Map:["1"], stopWords:[]})

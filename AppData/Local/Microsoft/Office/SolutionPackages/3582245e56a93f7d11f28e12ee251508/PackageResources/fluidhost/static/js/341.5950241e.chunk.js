@@ -1,2 +1,0 @@
-(this.webpackJsonpfluidhost=this.webpackJsonpfluidhost||[]).push([[341],{658:function(a){a.exports=JSON.parse('{"ControlClickToFollowLink":"Ctrl+Clic \xf1itiy tupanata qatinapaq","GettingThisReady":"Qallarichkan\xf1a kayta...","Remove":"Qichuy","Loading":"Qipichachkan","NewLiveComponentFileName":"Kawsaq Ima","NewLoopComponentFileName":"Kutipayay ima","CopyLink":"Tupanata mirachiy"}')}}]);
-//# sourceMappingURL=341.5950241e.chunk.js.map

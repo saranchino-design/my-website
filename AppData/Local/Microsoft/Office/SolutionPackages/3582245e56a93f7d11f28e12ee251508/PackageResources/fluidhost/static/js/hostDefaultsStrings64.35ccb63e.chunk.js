@@ -1,2 +1,0 @@
-(this.webpackJsonpfluidhost=this.webpackJsonpfluidhost||[]).push([[153],{1178:function(a){a.exports=JSON.parse('{"strings":{"shareDialogErrorTitle":{"s":"rakinakunapaq pantasqa","f":0},"shareDialogErrorMessage":{"s":"Qhispichiwayku, kunan pacha qarakuqta ruwayta mana atikuykuchu. Aswan qhipaman watiqmanta ruway.","f":0},"copyDialogErrorTitle":{"s":"Mirachinapaq pantasqa","f":0}}}')}}]);
-//# sourceMappingURL=hostDefaultsStrings64.35ccb63e.chunk.js.map

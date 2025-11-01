@@ -1,1 +1,0 @@
-gXMLBuffer="<?xml version=\"1.0\" encoding=\"UTF-8\"?><cki><ck fm=\"WN\" to=\"WN\" num=\"1\"/></cki>";

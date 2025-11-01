@@ -1,2 +1,0 @@
-(this.webpackJsonpfluidhost=this.webpackJsonpfluidhost||[]).push([[326],{643:function(o){o.exports=JSON.parse('{"ControlClickToFollowLink":"Ctrl+P\u0101whiri kia whai i te hononga","GettingThisReady":"Whakareri ana i t\u0113nei...","Remove":"Tango","Loading":"Uta ana","NewLiveComponentFileName":"Wae Mataora","NewLoopComponentFileName":"Wae Loop","CopyLink":"T\u0101ruatia te hononga"}')}}]);
-//# sourceMappingURL=326.cb9396a9.chunk.js.map

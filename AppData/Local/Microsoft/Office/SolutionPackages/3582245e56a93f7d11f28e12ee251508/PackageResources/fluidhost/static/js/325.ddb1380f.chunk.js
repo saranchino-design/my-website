@@ -1,2 +1,0 @@
-(this.webpackJsonpfluidhost=this.webpackJsonpfluidhost||[]).push([[325],{642:function(o){o.exports=JSON.parse('{"ControlClickToFollowLink":"Ctrl+klik\u0161\u0137is, lai atv\u0113rtu saiti","GettingThisReady":"Notiek sagatavo\u0161ana...","Remove":"No\u0146emt","Loading":"Notiek iel\u0101de","NewLiveComponentFileName":"Tie\u0161raides komponents","NewLoopComponentFileName":"Loop komponents","CopyLink":"Kop\u0113t saiti"}')}}]);
-//# sourceMappingURL=325.ddb1380f.chunk.js.map

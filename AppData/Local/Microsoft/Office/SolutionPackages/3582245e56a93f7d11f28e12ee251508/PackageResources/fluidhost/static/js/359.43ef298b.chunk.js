@@ -1,2 +1,0 @@
-(this.webpackJsonpfluidhost=this.webpackJsonpfluidhost||[]).push([[359],{676:function(o){o.exports=JSON.parse('{"ControlClickToFollowLink":"Havolani kuzatish uchun CTRL+bosing","GettingThisReady":"Tayyorlanmoqda...","Remove":"Olib tashlash","Loading":"Yuklanmoqda","NewLiveComponentFileName":"Jonli tarkibiy qism","NewLoopComponentFileName":"Loop tarkibiy qismi","CopyLink":"Havoladan nusxa olish"}')}}]);
-//# sourceMappingURL=359.43ef298b.chunk.js.map

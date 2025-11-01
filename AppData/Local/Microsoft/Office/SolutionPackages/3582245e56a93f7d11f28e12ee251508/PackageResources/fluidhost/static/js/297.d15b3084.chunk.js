@@ -1,2 +1,0 @@
-(this.webpackJsonpfluidhost=this.webpackJsonpfluidhost||[]).push([[297],{614:function(e){e.exports=JSON.parse('{"ControlClickToFollowLink":"Ctrl + kl\xf5ps lingi j\xe4rgimiseks","GettingThisReady":"Ettevalmistamine\u2026","Remove":"Eemalda","Loading":"Laadimine","NewLiveComponentFileName":"Reaalajakomponent","NewLoopComponentFileName":"Loopi komponent","CopyLink":"Kopeeri link"}')}}]);
-//# sourceMappingURL=297.d15b3084.chunk.js.map

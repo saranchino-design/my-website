@@ -1,2 +1,0 @@
-(this.webpackJsonpfluidhost=this.webpackJsonpfluidhost||[]).push([[345],{662:function(o){o.exports=JSON.parse('{"ControlClickToFollowLink":"Ctrl+klik za sledenje povezavi","GettingThisReady":"Pripravljanje vsega potrebnega ...","Remove":"Odstrani","Loading":"Nalaganje","NewLiveComponentFileName":"Dinami\u010dna komponenta","NewLoopComponentFileName":"Komponenta aplikacije Loop","CopyLink":"Kopiraj povezavo"}')}}]);
-//# sourceMappingURL=345.a2cfaa42.chunk.js.map

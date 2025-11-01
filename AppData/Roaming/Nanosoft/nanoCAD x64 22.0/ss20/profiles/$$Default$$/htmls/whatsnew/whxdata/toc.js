@@ -1,1 +1,0 @@
-gXMLBuffer ="<?xml version=\"1.0\" encoding=\"utf-8\" ?><data ><book name=\"Новые возможности nanoCAD 22.0\" url=\"WN/WN.htm#Новые_возможности\" src=\"toc1.js\" /></data>";

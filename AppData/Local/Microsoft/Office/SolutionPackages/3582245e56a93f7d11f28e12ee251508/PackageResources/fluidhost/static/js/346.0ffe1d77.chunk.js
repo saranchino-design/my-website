@@ -1,2 +1,0 @@
-(this.webpackJsonpfluidhost=this.webpackJsonpfluidhost||[]).push([[346],{663:function(o){o.exports=JSON.parse('{"ControlClickToFollowLink":"Ctrl+klikim p\xebr t\xeb ndjekur lidhjen","GettingThisReady":"Duke e p\xebrgatitur k\xebt\xeb...","Remove":"Hiq","Loading":"Duke ngarkuar","NewLiveComponentFileName":"Komponent i drejtp\xebrdrejt\xeb","NewLoopComponentFileName":"Komponent i Loop","CopyLink":"Kopjo lidhjen"}')}}]);
-//# sourceMappingURL=346.0ffe1d77.chunk.js.map
