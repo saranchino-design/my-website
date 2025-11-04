@@ -1,0 +1,5 @@
+echo "# Игнорируем системные файлы
+.vscode/
+.idea/
+*.tmp
+*.log" > .gitignore
